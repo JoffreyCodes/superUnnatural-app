@@ -1,0 +1,50 @@
+.App {
+  text-align: left;
+}
+.row {
+  display: flex;
+}
+
+.col {
+  text-align: center;
+  flex: 1;  
+
+
+}
+.col.layout.left{
+  background-color: grey;
+  flex: 3;  
+}
+.col.layout.mid{
+  text-align: left;
+  flex: 4;  
+}
+.col.layout.right {
+  background-color: yellow;
+  flex: 3
+}
+
+.row.track {
+  display: flex;
+  height: 80px;
+  border: solid black;
+  border-width: 0px 0px 1px 0px;
+}
+.col.track.left{
+  background-color: green;
+  flex: 1;  
+}
+.col.track.mid{
+  text-align: left;
+  flex: 5;  
+}
+.row.track.info {
+  display: flex;
+  height: 40px;
+  border: solid black;
+  border-width: 0px 0px 1px 0px;
+}
+.col.track.right {
+  background-color: grey;
+  flex: 1
+}
