@@ -7,6 +7,7 @@ function PlaylistTracks(props) {
   const [trackListData, setTrackListData] = useState({})
   const [trackListDataLoaded, setTrackListDataLoaded] = useState(false)
 
+
   
   const getTrackListData = async(spotifyPlaylistId) => {
     try {
@@ -27,7 +28,7 @@ function PlaylistTracks(props) {
   useEffect(() => {
     getTrackListData(spotifyPlaylistId)
   }, [spotifyPlaylistId])
-console.log(trackListData)
+  
   return (
     <>
       <h3>{trackListData.name}</h3>
@@ -36,7 +37,10 @@ console.log(trackListData)
       {trackListDataLoaded ? trackListData.tracks.items.map((trackObj, key) => {
         return (
           <div key={key}>
-            <Track trackObj={trackObj} />
+            <Track id={trackObj.track.id}
+              trackObj={trackObj}
+              setAlbumClick={props.setAlbumClick}
+            />
           </div>)
       }): "loading..."}  
       

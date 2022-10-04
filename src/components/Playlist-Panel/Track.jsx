@@ -1,23 +1,24 @@
 import React, {useState, useEffect} from 'react'
 import { UserAddTrackToSave, UserDelTrackToSave } from '../../utils/FetchSpotifyAPI'
+import PreviewPlayer from './PreviewPlayer'
 
 function Track(props) {
   const [isSaved, setIsSaved] = useState(props.trackObj.user_saved)
   const [stateChange, setStateChange] = useState(0)
+
 
   const trackObj = props.trackObj
   const handleCheckboxClick = (e) => {
     setIsSaved(e.target.checked)
     setStateChange(stateChange + 1)
   }
-
   useEffect(() => {
     function addOrRemoveTrackFromSpotify() {      
       try {
           if (isSaved && stateChange) {
-            UserAddTrackToSave(trackObj.track.id)  
+            UserAddTrackToSave(props.id)  
         } else if (!isSaved && stateChange) {
-            UserDelTrackToSave(trackObj.track.id)          
+            UserDelTrackToSave(props.id)          
         }  
       } catch (error) {
         console.log(error)
@@ -25,12 +26,13 @@ function Track(props) {
       }
     }
     addOrRemoveTrackFromSpotify(isSaved)
-  },[isSaved, trackObj.track.id, stateChange])
+  }, [isSaved, props.id, stateChange])
+
   return (
     <>
       <div className="row track">
         <div className="col track left">
-          <img src={trackObj.track.album.images[2].url} alt={trackObj.track.name}></img>
+          <img src={trackObj.track.album.images[2].url} alt={trackObj.track.name} />
         </div>
         <div className="col track mid">
           <div className="row track info top">{trackObj.track.name}</div>
@@ -40,6 +42,9 @@ function Track(props) {
           <input type="checkbox" checked={isSaved} onChange={ handleCheckboxClick }></input>
         </div>
       </div>
+      <PreviewPlayer id={props.id}
+        previewUrl={trackObj.track.preview_url}
+      />
     </>
   )
 }
