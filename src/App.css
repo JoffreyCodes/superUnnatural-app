@@ -12,12 +12,13 @@
 
 }
 .col.layout.left{
-  background-color: grey;
   flex: 3;  
 }
 .col.layout.mid{
   text-align: left;
-  flex: 4;  
+  flex: 4; 
+  height: 100vh; 
+  overflow-y:scroll;
 }
 .col.layout.right {
   background-color: yellow;

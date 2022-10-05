@@ -14,3 +14,16 @@ export const FetchSnData =  () => {
   }
   return getData()
 }
+
+export const FetchSpAlbumColor =  (trackId) => {
+  async function getData(trackId) {
+    const response = await axios.get(API_ENDPOINT+`/getColor/${trackId}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      }
+    })
+    return response.data
+  }
+  return getData(trackId)
+}

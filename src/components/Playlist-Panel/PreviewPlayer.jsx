@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react'
+import React, {useState, useRef} from 'react'
 
 function PreviewPlayer(props) {
   const ref = useRef()
@@ -26,17 +26,12 @@ function PreviewPlayer(props) {
     setIsPlaying(ref.current.paused)
     ref.current.pause()
   }
-  useEffect(() => {
-    console.log(isPlaying)
-  })
   const togglePlayPauseBtn = (isPlaying) => {
     return isPlaying ?
       <button id={`pauseBtn ${playerId}`} onClick={handlePauseClick}>Pause</button>
       :<button id={`playBtn ${playerId}`} onClick={handlePlayClick}>Play</button>
 
   }
-
-
   return (
     <>
       <div id={playerId} className="row player">

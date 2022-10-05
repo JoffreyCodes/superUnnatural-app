@@ -28,13 +28,17 @@ function Track(props) {
     addOrRemoveTrackFromSpotify(isSaved)
   }, [isSaved, props.id, stateChange])
 
+  const handleTrackClick = () => {
+    props.setTrackClick(props.id)
+  }
+
   return (
     <>
-      <div className="row track">
-        <div className="col track left">
+      <div className="row track" >
+        <div className="col track left" onClick={handleTrackClick}>
           <img src={trackObj.track.album.images[2].url} alt={trackObj.track.name} />
         </div>
-        <div className="col track mid">
+        <div className="col track mid" onClick={handleTrackClick}>
           <div className="row track info top">{trackObj.track.name}</div>
           <div className="row track info bottom">{trackObj.track.artists[0].name}</div>
         </div>

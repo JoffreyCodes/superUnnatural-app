@@ -28,7 +28,8 @@ function PlaylistTracks(props) {
   useEffect(() => {
     getTrackListData(spotifyPlaylistId)
   }, [spotifyPlaylistId])
-  
+
+
   return (
     <>
       <h3>{trackListData.name}</h3>
@@ -39,7 +40,7 @@ function PlaylistTracks(props) {
           <div key={key}>
             <Track id={trackObj.track.id}
               trackObj={trackObj}
-              setAlbumClick={props.setAlbumClick}
+              setTrackClick={props.setTrackClick}
             />
           </div>)
       }): "loading..."}  
