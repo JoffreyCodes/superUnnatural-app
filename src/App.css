@@ -12,7 +12,8 @@
 
 }
 .col.layout.left{
-  flex: 3;  
+  flex: 3;
+  height: 100vh
 }
 .col.layout.mid{
   text-align: left;
@@ -51,4 +52,10 @@
 }
 audio{
   width:100%
+}
+.spotify.container{
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
