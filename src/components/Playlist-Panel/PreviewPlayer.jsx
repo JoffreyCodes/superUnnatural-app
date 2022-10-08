@@ -30,16 +30,15 @@ function PreviewPlayer(props) {
     return isPlaying ?
       <button id={`pauseBtn ${playerId}`} onClick={handlePauseClick}>Pause</button>
       :<button id={`playBtn ${playerId}`} onClick={handlePlayClick}>Play</button>
-
   }
   return (
     <>
-      <div id={playerId} className="row player">
+      {/* <div id={playerId} className="previewPlayerContainer"> */}
         <audio controls id={playerId} ref={ref} onPlay={handlePlayClick}>
           <source src={props.previewUrl} />
         </audio>
-      </div>
-      {togglePlayPauseBtn(isPlaying)}
+      {/* </div> */}
+      {/* {togglePlayPauseBtn(isPlaying)} */}
     </>
   )
 }

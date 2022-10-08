@@ -32,12 +32,13 @@ function PlaylistTracks(props) {
 
   return (
     <>
-      <h3>{trackListData.name}</h3>
-      {trackListDataLoaded ? <img src={trackListData.images[0].url} alt={trackListData.title} height="150"/> : "loading..."}
-
+      <div className='row playlist-title'>
+        {trackListDataLoaded ? <img src={trackListData.images[0].url} alt={trackListData.title} height="150" /> : "loading..."}
+        <h1 className='playlist-title name'>{trackListData.name}</h1>
+      </div>
       {trackListDataLoaded ? trackListData.tracks.items.map((trackObj, key) => {
         return (
-          <div key={key}>
+          <div className="row track container" key={key}>
             <Track id={trackObj.track.id}
               trackObj={trackObj}
               setTrackClick={props.setTrackClick}

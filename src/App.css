@@ -1,4 +1,9 @@
-.App {
+:root{
+  --TRACK-HEIGHT: 100px;
+  --TRACK-INFO_HEGIHT: calc(var(--TRACK-HEIGHT) / 3);
+  /* --TRACK-INFO_HEGIHT: 30px */
+}
+  .App {
   text-align: left;
 }
 .row {
@@ -8,9 +13,8 @@
 .col {
   text-align: center;
   flex: 1;  
-
-
 }
+
 .col.layout.left{
   flex: 3;
   height: 100vh
@@ -26,36 +30,49 @@
   flex: 3
 }
 
-.row.track {
-  display: flex;
-  height: 80px;
-  border: solid black;
-  border-width: 0px 0px 1px 0px;
+.row.track.container {
+  border:  1px solid black ;
+  height: var(--TRACK-HEIGHT)
 }
 .col.track.left{
-  background-color: green;
   flex: 1;  
 }
-.col.track.mid{
+.col.track.mid {
   text-align: left;
-  flex: 5;  
+  flex: 5 1;
+  flex-direction: column;
+  align-items: flex-end;
 }
-.row.track.info {
+.row.track.info{
+  height:var(--TRACK-INFO_HEGIHT)
+}
+.col.track.checkbox {
+  flex: 1;
   display: flex;
-  height: 40px;
-  border: solid black;
-  border-width: 0px 0px 1px 0px;
+  justify-content: center;
+  align-items: center; 
 }
-.col.track.right {
-  background-color: grey;
-  flex: 1
+.track.checkbox{
+  text-align: center;
+  display: block;
+}
+.album.image{
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 audio{
-  width:100%
+  width: 100%;
+  height: auto;
+  border-radius: 90px;
 }
 .spotify.container{
   height:100vh;
   display: flex;
   justify-content: center;
   align-items: center; 
+}
+iframe{
+  box-shadow: 5px 5px 20px rgba(15, 15, 15, 0.4)
 }

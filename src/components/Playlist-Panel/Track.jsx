@@ -34,21 +34,27 @@ function Track(props) {
 
   return (
     <>
-      <div className="row track" >
-        <div className="col track left" onClick={handleTrackClick}>
-          <img src={trackObj.track.album.images[2].url} alt={trackObj.track.name} />
+      <div className="col track left" onClick={handleTrackClick}>
+        <img className="album image" src={trackObj.track.album.images[1].url} alt={trackObj.track.name} />
+      </div>
+      <div className="col track mid" onClick={handleTrackClick}>
+        <div className="row track info title">
+          <>{trackObj.track.name}</>
         </div>
-        <div className="col track mid" onClick={handleTrackClick}>
-          <div className="row track info top">{trackObj.track.name}</div>
-          <div className="row track info bottom">{trackObj.track.artists[0].name}</div>
+        <div className="row track info artist">
+          <>{trackObj.track.artists[0].name}</>
         </div>
-        <div className="col track right">{isSaved.toString()}
-          <input type="checkbox" checked={isSaved} onChange={ handleCheckboxClick }></input>
+        <div className="row track info player">
+          <PreviewPlayer id={props.id} previewUrl={trackObj.track.preview_url} />      
         </div>
       </div>
-      <PreviewPlayer id={props.id}
-        previewUrl={trackObj.track.preview_url}
-      />
+      <div className="col track checkbox">
+        <input clssName="track checkbox"
+          type="checkbox"
+          checked={isSaved}
+          onChange={handleCheckboxClick}
+        />
+      </div>
     </>
   )
 }

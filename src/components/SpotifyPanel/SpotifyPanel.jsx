@@ -16,7 +16,6 @@ function SpotifyPanel(props) {
         }
       }
       getBgColor()
-      console.log(bgColor)  
     }    
   }, [props.trackClickId, bgColor])
   
