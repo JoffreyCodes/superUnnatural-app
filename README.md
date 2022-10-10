@@ -10,6 +10,7 @@
 
 ## App Snapshot
 
+<img src="./media/iter1.png" height=50%>
 <img src="./media/proof-of-concept.png" height=50%>
 
 ## General Info
@@ -37,6 +38,11 @@ SuperUnnatural is a single-page application that allows users to save, play, and
 ## Features
 
 **List of features:**
+Bells & Whistles:
+
+- Matching album Spotify color for Spotify panel and Heart Save
+
+Proof of Concept:
 
 - Displays 20 recent supernatural workouts (partial and completed) and the playlist tracks that were used.
 - Users are able to select and unselect tracks to save to their playlist
@@ -44,11 +50,11 @@ SuperUnnatural is a single-page application that allows users to save, play, and
 
 **Future Works:**
 
-- Spotify Player Integration - In Progress
-  - Integrated Spotify Player
-  - Track Preview Selector
-  - Access to artist Spotify page
-- Workout Data Analytics and Visualizations - Planned
+- Spotify Player Integration - Completed
+  - Integrated Spotify Player - Completed
+  - Track Preview Selector - Completed
+  - Access to artist Spotify page - TBD
+- Workout Data Analytics and Visualizations - In Progress
 
 ## Project Status
 
