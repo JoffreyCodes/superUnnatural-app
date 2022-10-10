@@ -1,6 +1,6 @@
 :root{
   --TRACK-HEIGHT: 100px;
-  --TRACK-INFO_HEGIHT: calc(var(--TRACK-HEIGHT) / 3);
+  --TRACK-INFO-HEIGHT: calc(var(--TRACK-HEIGHT) / 3);
   /* --TRACK-INFO_HEGIHT: 30px */
 }
   .App {
@@ -15,24 +15,43 @@
   flex: 1;  
 }
 
+/* Main Layout components */
 .col.layout.left{
   flex: 3;
   height: 100vh
 }
-.col.layout.mid{
+.col.layout.playlist{
   text-align: left;
-  flex: 4; 
+  flex: 2; 
   height: 100vh; 
   overflow-y:scroll;
+  background-color: lightgrey;
 }
-.col.layout.right {
+.col.layout.details {
   background-color: yellow;
   flex: 3
 }
 
+/* Mid column styling */
+.row.playlist.banner{
+  height: 100px;
+  align-items: end;
+  justify-content: space-between;
+}
+img.sn-playlist{
+  height:100%;
+  width:100%;
+  object-fit: cover;
+}
+/* Track styling */
 .row.track.container {
-  border:  1px solid black ;
-  height: var(--TRACK-HEIGHT)
+  /* border:  1px solid lightgrey; */
+  border-bottom: 1px solid lightgrey;
+  background-color: #858585;
+  height: var(--TRACK-HEIGHT);
+  padding: 5px;
+  border-radius: 15px;
+
 }
 .col.track.left{
   flex: 1;  
@@ -44,17 +63,30 @@
   align-items: flex-end;
 }
 .row.track.info{
-  height:var(--TRACK-INFO_HEGIHT)
+  height:var(--TRACK-INFO-HEIGHT);
+  padding-left: 5px;
+}
+p.track-info-title{
+  font-size: 0.8em;
+  color: white;
+  margin-block-end: 0px;
+}
+p.track-info-artist{
+  font-size: 0.8em;
+  color: lightgrey;
+  margin-block-start: 0px;
 }
 .col.track.checkbox {
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center; 
 }
-.track.checkbox{
-  text-align: center;
-  display: block;
+h1.heart.save{
+  font-size: 3em;
+  user-select: none; /* For Chrome and Opera */
+  -ms-user-select: none; /* For Internet Edge and Explorer*/
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none; /* For Firefox */
 }
 .album.image{
   height:100%;
@@ -67,6 +99,13 @@ audio{
   height: auto;
   border-radius: 90px;
 }
+img.album.image{
+  height:100%;
+  border-radius: 15px;
+}
+
+
+/* Spotify Left Columm */
 .spotify.container{
   height:100vh;
   display: flex;

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { FetchPlaylistData, UserSavedTrack } from '../../utils/FetchSpotifyAPI'
+import PlaylistBanner from './PlaylistBanner'
 import Track from './Track'
 
 function PlaylistTracks(props) {
@@ -32,10 +33,7 @@ function PlaylistTracks(props) {
 
   return (
     <>
-      <div className='row playlist-title'>
-        {trackListDataLoaded ? <img src={trackListData.images[0].url} alt={trackListData.title} height="150" /> : "loading..."}
-        <h1 className='playlist-title name'>{trackListData.name}</h1>
-      </div>
+      <PlaylistBanner trackListDataLoaded={trackListDataLoaded} trackListData={trackListData} />
       {trackListDataLoaded ? trackListData.tracks.items.map((trackObj, key) => {
         return (
           <div className="row track container" key={key}>

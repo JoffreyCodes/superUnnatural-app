@@ -1,32 +1,9 @@
-import React, {useState, useEffect} from 'react'
-import { UserAddTrackToSave, UserDelTrackToSave } from '../../utils/FetchSpotifyAPI'
+import React from 'react'
+import Heartbox from './Heartbox'
 import PreviewPlayer from './PreviewPlayer'
 
 function Track(props) {
-  const [isSaved, setIsSaved] = useState(props.trackObj.user_saved)
-  const [stateChange, setStateChange] = useState(0)
-
-
   const trackObj = props.trackObj
-  const handleCheckboxClick = (e) => {
-    setIsSaved(e.target.checked)
-    setStateChange(stateChange + 1)
-  }
-  useEffect(() => {
-    function addOrRemoveTrackFromSpotify() {      
-      try {
-          if (isSaved && stateChange) {
-            UserAddTrackToSave(props.id)  
-        } else if (!isSaved && stateChange) {
-            UserDelTrackToSave(props.id)          
-        }  
-      } catch (error) {
-        console.log(error)
-        window.location.replace('/')
-      }
-    }
-    addOrRemoveTrackFromSpotify(isSaved)
-  }, [isSaved, props.id, stateChange])
 
   const handleTrackClick = () => {
     props.setTrackClick(props.id)
@@ -39,22 +16,21 @@ function Track(props) {
       </div>
       <div className="col track mid" onClick={handleTrackClick}>
         <div className="row track info title">
-          <>{trackObj.track.name}</>
+          <p className="track-info-title">{trackObj.track.name}</p>
         </div>
         <div className="row track info artist">
-          <>{trackObj.track.artists[0].name}</>
+          <p className="track-info-artist">{trackObj.track.artists[0].name}</p>
         </div>
         <div className="row track info player">
           <PreviewPlayer id={props.id} previewUrl={trackObj.track.preview_url} />      
         </div>
       </div>
       <div className="col track checkbox">
-        <input clssName="track checkbox"
-          type="checkbox"
-          checked={isSaved}
-          onChange={handleCheckboxClick}
+        <Heartbox id={props.trackObj.track.id}
+          trackObj={props.trackObj}
         />
       </div>
+      
     </>
   )
 }
