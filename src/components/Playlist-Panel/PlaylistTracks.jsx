@@ -33,18 +33,19 @@ function PlaylistTracks(props) {
 
   return (
     <>
-      <PlaylistBanner trackListDataLoaded={trackListDataLoaded} trackListData={trackListData} />
+      <PlaylistBanner workout={props.workout}
+        trackListDataLoaded={trackListDataLoaded}
+        trackListData={trackListData} />
       {trackListDataLoaded ? trackListData.tracks.items.map((trackObj, key) => {
         return (
-          <div className="row track container" key={key}>
-            <Track id={trackObj.track.id}
-              trackObj={trackObj}
-              setTrackClick={props.setTrackClick}
-            />
-          </div>)
-      }): "loading..."}  
-      
-
+            <div key={key} className="row track container">
+              <Track id={trackObj.track.id}
+                trackObj={trackObj}
+                setTrackClick={props.setTrackClick}
+              />
+            </div>
+        )
+      }): "loading..."}
     </>
   )
 }

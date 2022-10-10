@@ -27,22 +27,15 @@
   overflow-y:scroll;
   background-color: lightgrey;
 }
-.col.layout.details {
-  background-color: yellow;
-  flex: 3
+
+/* Playlist column styling */
+.row.playlist.banner{
+  height: 70px;
+  /* display: flex; */
+  /* align-items: end; */
+  /* justify-content: space-between; */
 }
 
-/* Mid column styling */
-.row.playlist.banner{
-  height: 100px;
-  align-items: end;
-  justify-content: space-between;
-}
-img.sn-playlist{
-  height:100%;
-  width:100%;
-  object-fit: cover;
-}
 /* Track styling */
 .row.track.container {
   /* border:  1px solid lightgrey; */
@@ -51,7 +44,6 @@ img.sn-playlist{
   height: var(--TRACK-HEIGHT);
   padding: 5px;
   border-radius: 15px;
-
 }
 .col.track.left{
   flex: 1;  
@@ -104,8 +96,7 @@ img.album.image{
   border-radius: 15px;
 }
 
-
-/* Spotify Left Columm */
+/* Spotify Columm */
 .spotify.container{
   height:100vh;
   display: flex;
@@ -114,4 +105,14 @@ img.album.image{
 }
 iframe{
   box-shadow: 5px 5px 20px rgba(15, 15, 15, 0.4)
+}
+
+/* Workout Column */
+.col.layout.details {
+  background-color: yellow;
+  flex: 3;
+  padding: 15px;
+}
+img.workout-detail-album{
+  height:350px;
 }

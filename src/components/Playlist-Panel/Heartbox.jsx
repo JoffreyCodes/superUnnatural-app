@@ -5,7 +5,7 @@ import { FetchSpAlbumColor } from '../../utils/FetchAPI'
 function Heartbox(props) {
     const [isSaved, setIsSaved] = useState(props.trackObj.user_saved)
     const [stateChange, setStateChange] = useState(0)
-    const [bgColor, setBgColor] = useState()
+    const [bgColor, setBgColor] = useState('#858585')
 
 
     const handleCheckboxClick = () => {

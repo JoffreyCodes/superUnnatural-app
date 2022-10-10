@@ -8,11 +8,12 @@ function Playlists(props) {
       {props.snDataLoaded ?
         props.snData.map((workout,key) => {
           return (
-            <div key={key}>
+            <div key={key} onClick={()=>{props.setSelectedWorkout(workout)}}>
               <PlaylistTracks
+                workout={workout}
                 spotifyPlaylistId={workout.spotifyPlaylistId}
                 setTrackClick={props.setTrackClick}
-                />
+              />
             </div>)
         }) : "loading..."}
     </>

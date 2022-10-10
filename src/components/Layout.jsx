@@ -7,6 +7,8 @@ import WorkoutDetails from './WorkoutDetails'
 
 function Layout(props) {
   const [trackClickId, setTrackClick] = useState()
+  const [selectedWorkout, setSelectedWorkout] = useState(0)
+  // const [trackListDataLoaded, setTrackListDataLoaded] = useState(false)
   return (
     <>
       <div className="row layout">
@@ -14,12 +16,16 @@ function Layout(props) {
           <SpotifyPanel trackClickId={trackClickId}/>
         </div>
         <div className="col layout details">
-          <WorkoutDetails snData={props.snData} snDataLoaded={props.snDataLoaded} />
+          <WorkoutDetails selectedWorkout={selectedWorkout}
+            snData={props.snData}
+            snDataLoaded={props.snDataLoaded}
+        />
         </div>
         <div className="col layout playlist">
           <Playlists snData={props.snData}
             snDataLoaded={props.snDataLoaded}
             setTrackClick={setTrackClick}
+            setSelectedWorkout={setSelectedWorkout}
           />
         </div>
       </div>

@@ -38,6 +38,7 @@ SuperUnnatural is a single-page application that allows users to save, play, and
 ## Features
 
 **List of features:**
+
 Bells & Whistles:
 
 - Matching album Spotify color for Spotify panel and Heart Save
