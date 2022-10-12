@@ -10,6 +10,7 @@ function Playlists(props) {
           return (
             <div key={key} onClick={()=>{props.setSelectedWorkout(workout)}}>
               <PlaylistTracks
+                plId={key}
                 workout={workout}
                 spotifyPlaylistId={workout.spotifyPlaylistId}
                 setTrackClick={props.setTrackClick}

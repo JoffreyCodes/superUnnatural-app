@@ -3,13 +3,17 @@ import { FetchSpAlbumColor } from '../../utils/FetchAPI'
 import SpotifyPlayer from './SpotifyPlayer'
 
 function SpotifyPanel(props) {
-  const [bgColor, setBgColor] = useState("blue")
+  const [bgColor, setBgColor] = useState("white")
 
+  const track = document.getElementsByClassName("row track container pl-0 tr-0")
+  const trackId = props.trackClickId ? props.trackClickId :
+    track[0] ?  track[0].id : null 
+  console.log(track)
   useEffect(() => {
-    if (props.trackClickId) {
+    if (trackId) {
       const getBgColor = async () => {
         try {
-            const bgColorData = await FetchSpAlbumColor(props.trackClickId)  
+            const bgColorData = await FetchSpAlbumColor(trackId)  
             setBgColor(bgColorData.data.color)
         } catch (error) {
           console.log(error)
@@ -17,17 +21,17 @@ function SpotifyPanel(props) {
       }
       getBgColor()
     }    
-  }, [props.trackClickId, bgColor])
+  }, [trackId, bgColor])
   
   const styleObj =
     {
       backgroundColor: bgColor
-    }
+  }
   
   return (      
-    props.trackClickId ?
+    props.trackClickId || track[0] ? 
       <div className="spotify container"style={styleObj}>
-        <SpotifyPlayer trackClick={props.trackClickId} />
+        <SpotifyPlayer trackClick={trackId} />
       </div>
     :'Loading'
   )

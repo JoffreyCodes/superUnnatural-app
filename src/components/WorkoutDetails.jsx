@@ -1,32 +1,27 @@
 import React from 'react'
 
 function WorkoutDetails(props) {
-  const data = props.selectedWorkout
-  const dataAlbumId = `img-${data.spotifyPlaylistId}`
-  const dataAlbumImage = document.getElementById(dataAlbumId)
-  const dataAlbumURL = dataAlbumImage ? dataAlbumImage.src : null
-  
-  const albumId = props.snDataLoaded ? `img-${props.snData[0].spotifyPlaylistId}` : null
-  const albumImage = document.getElementById(albumId)
-  const albumURL = albumImage ? albumImage.src : null
-  
+  const data = props.selectedWorkout ? props.selectedWorkout :
+    props.snDataLoaded ? props.snData[0] : null
+  const albumId = props.snDataLoaded ? `img-${data.spotifyPlaylistId}` : null
+  const albumImg = document.getElementById(albumId)
+  const albumImgSrc = albumImg ? albumImg.src : null
   return (
     <>
-      {props.snDataLoaded && !props.selectedWorkout ?
-        <>        
-          <img className="workout-detail-album" src={albumURL} alt={albumId}></img>
-          <h1>{props.snData[0].title}</h1>
-          <p>{props.snData[0].description}</p>      
+      {props.snDataLoaded ?
+        <>
+          <img className="workout-detail-album" src={albumImgSrc} alt={albumId}></img>
+          <h1>{data.title}</h1>
+          <p>Last Played: {data.lastPlayed}</p>
+          <p>Released: {data.launchDate}</p>
+          <p>Bookmarked: {data.isFavorite.toString()}</p>
+          <p>Duration: {data.duration}</p>
+          <p>Type: {data.workoutType}</p>
+          <p>Intensity: {data.intensity}</p>
+          <p>{data.description}</p>
         </>
-      :
-        props.selectedWorkout ?
-          <>
-            <img className="workout-detail-album" src={dataAlbumURL} alt={dataAlbumId}></img>
-            <h1>{data.title}</h1>
-            <p>{data.description}</p>   
-          </>  
         :
-          <p>loading...</p>
+        <p>loading...</p>
       }
     </>
   )
