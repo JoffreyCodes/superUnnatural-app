@@ -18,8 +18,9 @@ function Layout(props) {
             snDataLoaded={props.snDataLoaded}
         />
         </div>
-        <div className="col layout left">
+        <div className="col layout spotify">
           <SpotifyPanel trackClickId={trackClickId}
+            selectedWorkout={selectedWorkout}
             snDataLoaded={props.snDataLoaded}
             snData={props.snData}
         />

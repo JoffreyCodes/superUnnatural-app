@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { FetchSpAlbumColor } from '../../utils/FetchAPI'
 import SpotifyPlayer from './SpotifyPlayer'
+import SpotifyPlaylistPlayer from './SpotifyPlaylistPlayer'
 
 function SpotifyPanel(props) {
   const [bgColor, setBgColor] = useState("white")
@@ -22,7 +23,7 @@ function SpotifyPanel(props) {
       getBgColor()
     }    
   }, [trackId, bgColor])
-  
+  console.log(props.selectedWorkout)
   const styleObj =
     {
       backgroundColor: bgColor
@@ -32,6 +33,8 @@ function SpotifyPanel(props) {
     trackId ? 
       <div className="spotify container"style={styleObj}>
         <SpotifyPlayer trackClick={trackId} />
+        <SpotifyPlaylistPlayer selectedWorkout={props.selectedWorkout} />
+
       </div>
     :'Loading'
   )
