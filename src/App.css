@@ -31,11 +31,31 @@
 /* Playlist column styling */
 .row.playlist.banner{
   height: 70px;
-  /* display: flex; */
-  /* align-items: end; */
-  /* justify-content: space-between; */
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: Yellow;
+  border-bottom: 1px solid lightgrey;
 }
-
+/* Playlist Banner Styling */
+.banner.info.container{
+  flex-direction: column;
+  padding: 5px;
+}
+.banner.row{
+  display:flex;
+}
+.banner.row.info{
+  font-size: 0.8em;
+  justify-content: end
+}
+img.banner{
+  height: 100%;
+  width: 25%;
+  border-radius: 15px;
+}
 /* Track styling */
 .row.track.container {
   /* border:  1px solid lightgrey; */
@@ -115,4 +135,6 @@ iframe{
 }
 img.workout-detail-album{
   height:350px;
+  border-radius: 25px;
+  box-shadow: 0 0 20px 7px grey;
 }

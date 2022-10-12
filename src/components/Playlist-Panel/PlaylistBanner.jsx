@@ -7,13 +7,21 @@ function PlaylistBanner(props) {
     return (
         <div className='row playlist banner'>
             {props.trackListDataLoaded ?
-                <>
-                    <h1>{props.workout.title}</h1>
-                    <h4>{showDate}</h4>
-                    <h4>{props.workout.workoutType}</h4>
-                    
+                <>                    
+                    <div className="banner info container">
+                        <div className="banner row title">
+                            <strong>{props.workout.title}</strong>
+                        </div>
+                        <div className="banner row info">
+                            {showDate}
+                        </div>
+                        <div className="banner row info">
+                            {props.workout.workoutType}
+                        </div>
+                    </div>
 
-                    <img hidden id={`img-${props.trackListData.id}`}
+
+                    <img className="img banner" id={`img-${props.trackListData.id}`}
                         src={props.trackListData.images[0].url}
                         alt={props.trackListData.title}
                     />
