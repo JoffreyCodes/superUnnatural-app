@@ -8,7 +8,7 @@ function SpotifyPanel(props) {
   const track = document.getElementsByClassName("row track container pl-0 tr-0")
   const trackId = props.trackClickId ? props.trackClickId :
     track[0] ?  track[0].id : null 
-  console.log(track)
+  
   useEffect(() => {
     if (trackId) {
       const getBgColor = async () => {
@@ -29,7 +29,7 @@ function SpotifyPanel(props) {
   }
   
   return (      
-    props.trackClickId || track[0] ? 
+    trackId ? 
       <div className="spotify container"style={styleObj}>
         <SpotifyPlayer trackClick={trackId} />
       </div>

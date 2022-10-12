@@ -39,7 +39,7 @@ function PlaylistTracks(props) {
       {trackListDataLoaded ? trackListData.tracks.items.map((trackObj, key) => {
         return (
             <div key={key} className={`row track container pl-${props.plId} tr-${key}`} id={trackObj.track.id} >
-            <Track trackObj={trackObj} setTrackClick={props.setTrackClick} />
+            <Track trackObj={trackObj} setTrackClick={props.setTrackClick} id={trackObj.track.id} />
             </div>
         )
       }): "loading..."}
