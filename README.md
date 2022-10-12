@@ -30,11 +30,13 @@ SuperUnnatural is a single-page application that allows users to save, play, and
 - React
 - Axios
 - Javascript
+  [source repo](https://github.com/JoffreyCodes/superUnnatural-app)
 
 ### Back-end
 
 - Python
 - Flask
+  [source repo](https://github.com/JoffreyCodes/superUnnatural-api)
 
 ## Features
 
