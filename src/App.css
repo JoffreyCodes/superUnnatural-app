@@ -31,9 +31,18 @@
   align-items: end;
   justify-content: space-between;
   padding: 5px;
-  border-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   background-color: greenyellow;
   border-bottom: 1px solid lightgrey;
+}
+.playlist.container{
+  margin: 15px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  border: 1px solid black;
+  box-shadow: -6px 7px 10px 0px black;
+
 }
 /* Playlist Banner Styling */
 .banner.info.container{
@@ -53,14 +62,20 @@ img.banner{
   border-radius: 15px;
 }
 /* Track styling */
-.row.track.container {
-  /* border:  1px solid lightgrey; */
+.row.track.container:not(:last-child) {
   border-bottom: 1px solid lightgrey;
   background-color: #858585;
   height: var(--TRACK-HEIGHT);
   padding: 5px;
-  border-radius: 15px;
 }
+.row.track.container:last-child {
+  background-color: #858585;
+  height: var(--TRACK-HEIGHT);
+  padding: 5px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
 .col.track.left{
   flex: 1;  
 }
@@ -116,15 +131,20 @@ img.album.image{
 .col.layout.spotify{
   flex: 2
 }
+.spotify.inner.panel{
+  padding-top: 15px;
+}
 .spotify.container{
   height:100vh;
   display: flex;
   justify-content: space-around;
-  align-items: center; 
+  align-items: center;  
   flex-direction: column;
 }
 iframe{
-  box-shadow: 5px 5px 20px rgba(15, 15, 15, 0.4)
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  box-shadow: -12px 13px 10px 0px black;
 }
 
 /* Workout Column */
@@ -136,5 +156,8 @@ iframe{
 img.workout-detail-album{
   height:350px;
   border-radius: 25px;
-  box-shadow: 0 0 20px 7px grey;
+  box-shadow: -12px 13px 10px 0px grey;
+}
+.workout.details.container{
+  display: grid;
 }

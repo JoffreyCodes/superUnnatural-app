@@ -24,19 +24,17 @@ SuperUnnatural is a single-page application that allows users to save, play, and
 
 ## Tech
 
-### Front-end
+### Front-end [source](https://github.com/JoffreyCodes/superUnnatural-app)
 
 - Spotify api
 - React
 - Axios
 - Javascript
-  [source repo](https://github.com/JoffreyCodes/superUnnatural-app)
 
-### Back-end
+### Back-end [source repo](https://github.com/JoffreyCodes/superUnnatural-api)
 
 - Python
 - Flask
-  [source repo](https://github.com/JoffreyCodes/superUnnatural-api)
 
 ## Features
 
