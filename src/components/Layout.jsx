@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 
 import Playlists from './Playlist-Panel/Playlists'
 import SpotifyPanel from './SpotifyPanel/SpotifyPanel'
-import WorkoutDetails from './WorkoutDetails'
+import WorkoutDetails from './Workout-Panel/WorkoutDetails'
 
 
 function Layout(props) {
   const [trackClickId, setTrackClick] = useState()
   const [selectedWorkout, setSelectedWorkout] = useState()
+  const [trackListDataLoaded, setTrackListDataLoaded] = useState(false)
 
   return (
     <>
@@ -22,6 +23,7 @@ function Layout(props) {
           <SpotifyPanel trackClickId={trackClickId}
             selectedWorkout={selectedWorkout}
             snDataLoaded={props.snDataLoaded}
+            trackListDataLoaded={trackListDataLoaded}
             snData={props.snData}
         />
         </div>
@@ -31,6 +33,7 @@ function Layout(props) {
             snDataLoaded={props.snDataLoaded}
             setTrackClick={setTrackClick}
             setSelectedWorkout={setSelectedWorkout}
+            setTrackListDataLoaded={setTrackListDataLoaded}
           />
         </div>
       </div>

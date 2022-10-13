@@ -4,8 +4,9 @@ function PlaylistBanner(props) {
     const date = props.workout.lastPlayed
     const parsedDate = new Date(Date.parse(date))
     const showDate = `${parsedDate.getMonth() + 1}.${parsedDate.getDate()}`
+    console.log(props)
     return (
-        <div className='row playlist banner'>
+        <div className={`row playlist banner pl-${props.plId}`} id={props.trackListData.id}>
             {props.trackListDataLoaded ?
                 <>                    
                     <div className="banner info container">

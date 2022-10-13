@@ -10,6 +10,11 @@ function SpotifyPanel(props) {
   const trackId = props.trackClickId ? props.trackClickId :
     track[0] ?  track[0].id : null 
   
+  const playlist = document.getElementsByClassName("row playlist banner pl-0")
+  const playlistId = props.selectedWorkout ? props.selectedWorkout.spotifyPlaylistId :
+    playlist[0] ? playlist[0].id : null 
+  console.log(playlist[0])
+  console.log(playlistId)
   useEffect(() => {
     if (trackId) {
       const getBgColor = async () => {
@@ -23,18 +28,17 @@ function SpotifyPanel(props) {
       getBgColor()
     }    
   }, [trackId, bgColor])
-  console.log(props.selectedWorkout)
+  
   const styleObj =
     {
       backgroundColor: bgColor
   }
   
   return (      
-    trackId ? 
+    props.trackListDataLoaded ? 
       <div className="spotify container"style={styleObj}>
         <SpotifyPlayer trackClick={trackId} />
-        <SpotifyPlaylistPlayer selectedWorkout={props.selectedWorkout} />
-
+        <SpotifyPlaylistPlayer selectedWorkout={playlistId} />
       </div>
     :'Loading'
   )

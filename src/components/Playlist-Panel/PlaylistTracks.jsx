@@ -30,10 +30,14 @@ function PlaylistTracks(props) {
     getTrackListData(spotifyPlaylistId)
   }, [spotifyPlaylistId])
 
-
+  useEffect(() => {
+    props.setTrackListDataLoaded(trackListDataLoaded)
+  })
   return (
     <>
-      <PlaylistBanner workout={props.workout}
+      <PlaylistBanner
+        plId={props.plId}
+        workout={props.workout}
         trackListDataLoaded={trackListDataLoaded}
         trackListData={trackListData} />
       {trackListDataLoaded ? trackListData.tracks.items.map((trackObj, key) => {
