@@ -172,8 +172,14 @@ img.workout-album{
   border-radius: 25px;
   border: 1px solid black;
 }
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  column-gap: 50px;
+.workout-details-container{
+  display:flex;
+  background: yellow;
+  border: 1px solid black;
+  height: 10%;
+  justify-content: center;
+}
+.workout-detail{
+  flex: 1;
+  width: 20px;
 }

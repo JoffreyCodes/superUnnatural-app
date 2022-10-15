@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import Playlists from './Playlist-Panel/Playlists'
 import SpotifyPanel from './SpotifyPanel/SpotifyPanel'
-import WorkoutDetails from './Workout-Panel/WorkoutDetails'
+import WorkoutPanel from './Workout-Panel/WorkoutPanel'
 
 
 function Layout(props) {
@@ -16,7 +16,7 @@ function Layout(props) {
       <div className="layout">
         <div className="row layout">
           <div className="col layout details">
-            <WorkoutDetails selectedWorkout={selectedWorkout}
+            <WorkoutPanel selectedWorkout={selectedWorkout}
               snData={props.snData}
               snDataLoaded={props.snDataLoaded}
             />

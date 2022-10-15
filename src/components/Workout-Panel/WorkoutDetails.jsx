@@ -1,37 +1,33 @@
 import React from 'react'
-
+import { TbSwords} from 'react-icons/tb'
+import {GiBoxingGloveSurprise} from 'react-icons/gi'
 function WorkoutDetails(props) {
-  const data = props.selectedWorkout ? props.selectedWorkout :
-    props.snDataLoaded ? props.snData[0] : null
-  const albumId = props.snDataLoaded ? `img-${data.spotifyPlaylistId}` : null
-  const albumImg = document.getElementById(albumId)
-  const albumImgSrc = albumImg ? albumImg.src : null
-  
-  const info = props.snDataLoaded ? {
-    'type': data.workoutType,
-    'duration': data.duration,
-    'intensity': data.intensity,
-    'played:': data.lastPlayed,
-    'released': data.launchDate
-  } : {}
-
-  console.log(Object.keys(info))
-  return (
-    <>
-      {props.snDataLoaded ?
-        <>          
-          <img className="workout-detail-album" src={albumImgSrc} alt={albumId}></img>
-          <h1>{data.title}</h1>
-          <div className="workout details container">
-            <></>
-          </div>
-          <h5>{data.description}</h5>
-        </>
-        :
-        <p>loading...</p>
-      }
-    </>
-  )
+    const info = props.info
+    const type = () => {
+        if (info.type === 'classic') {
+            return (<TbSwords size='2em'/>)
+        } else if (info.type === 'boxing'){
+            return (<GiBoxingGloveSurprise size='2em'/>)
+        }else{
+            return('other')
+        }       
+    }
+    return (
+        <div className="workout-details-container">          
+            <div className="workout-detail">
+                <strong>type</strong>
+                <div className='type-icon'>{type()}</div>
+            </div>
+            <div className="workout-detail">
+                <strong>duration</strong>
+                <div>{info.duration}</div>
+            </div>
+            <div className="workout-detail">
+                <strong>intensity</strong>
+                <div>{info.intensity}</div>
+            </div>
+        </div>
+    )
 }
 
 export default WorkoutDetails
