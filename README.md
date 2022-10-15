@@ -10,6 +10,7 @@
 
 ## App Snapshot
 
+<img src="./media/v1.png" height=50%>
 <img src="./media/iter2.png" height=50%>
 <img src="./media/iter1.png" height=50%>
 <img src="./media/proof-of-concept.png" height=50%>
@@ -43,6 +44,7 @@ SuperUnnatural is a single-page application that allows users to save, play, and
 Bells & Whistles:
 
 - Matching album Spotify color for Spotify panel and Heart Save
+- Spotify Panel color brightened by appending an `alpha value` to the retrieved hex color.
 
 Proof of Concept:
 
@@ -57,11 +59,13 @@ Proof of Concept:
   - Track Preview Selector - Completed
   - Access to artist Spotify page - TBD
 - Workout Data Analytics and Visualizations - In Progress
+  - Fitbit data integration - In Progress
 
 ## Project Status
 
 - Proof of concept - Completed
-- In development
+- V1 Completed - Proof of concept and aesthetic vision
+- V2 - User data analytics, Workout rankings and Fitbit data - In development
 
 ## Credits
 
