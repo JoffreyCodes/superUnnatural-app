@@ -109,6 +109,7 @@ p.track-info-artist{
 }
 h1.heart.save{
   font-size: 3em;
+  cursor: pointer;
   user-select: none; /* For Chrome and Opera */
   -ms-user-select: none; /* For Internet Edge and Explorer*/
   -webkit-user-select: none; /* For Safari */
@@ -174,12 +175,41 @@ img.workout-album{
 }
 .workout-details-container{
   display:flex;
-  background: yellow;
-  border: 1px solid black;
-  height: 10%;
   justify-content: center;
+  padding: 10px 0;
 }
 .workout-detail{
   flex: 1;
   width: 20px;
+}
+.text.detail{
+  font-family: fantasy;
+}
+.text.detail.workout.title{
+  font-size: 35px;
+  padding: 25px 0;
+}
+.text.detail.title{
+  font-size: 15px;
+  padding-bottom: 5px;
+}
+.text.detail.duration{
+  font-size: 25px;
+  color: yellowgreen;
+}
+.intensity.rating{
+  font-size: 25px;
+}
+.intensity.low{
+  color:green;
+}
+.intensity.med{
+  color:blue;
+}
+.intensity.high{
+  color:Red;
+}
+svg.boxing-icon{
+  color:red;
+  transform: rotate(-90deg)
 }

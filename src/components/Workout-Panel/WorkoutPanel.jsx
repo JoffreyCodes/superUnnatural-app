@@ -21,7 +21,7 @@ function WorkoutPanel(props) {
       {props.snDataLoaded ?
         <>          
           <img className="workout-album" src={albumImgSrc} alt={albumId}></img>
-          <h1>{data.title}</h1>
+          <div className="text detail workout title">{data.title}</div>
             <WorkoutDetails info={info} />
           <h5>{data.description}</h5>
         </>
