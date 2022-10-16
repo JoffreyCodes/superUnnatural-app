@@ -24,10 +24,9 @@
   flex: 1; 
   overflow-y:scroll;
   background-color: palegreen;
-}
+} 
 .col.layout.playlist::-webkit-scrollbar-track
 {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	border-radius: 4px;
 	background-color: #F5F5F5;
 }
@@ -41,7 +40,6 @@
 .col.layout.playlist::-webkit-scrollbar-thumb
 {
 	border-radius: 4px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: greenyellow;
 }
 /* Playlist column styling */
@@ -150,10 +148,6 @@ img.album.image{
 }
 
 /* Spotify Columm */
-.col.layout.spotify{
-  flex: 2;
-  height: -webkit-fill-available;
-}
 .spotify.inner.panel{
   padding-top: 15px;
 }
@@ -186,7 +180,7 @@ iframe{
   background-color: lightgoldenrodyellow;
 }
 img.workout-album{
-  height:350px;
+  width: 70%;
   border-radius: 25px;
   border: 1px solid black;
 }
@@ -229,4 +223,31 @@ img.workout-album{
 svg.boxing-icon{
   color:red;
   transform: rotate(-90deg)
+}
+@media(max-width: 986px){
+  .col.layout.details {
+    display:none;
+  }
+}
+
+@media(max-width: 1024px){
+  .col.layout.details {
+    background-color: papayawhip;
+    flex: 3;
+  }
+}
+@media(max-width:1024px){
+  .col.layout.spotify{
+    flex: 4;
+    height: -webkit-fill-available;
+  }
+}
+
+@media (max-width: 1024px){
+  .col.layout.playlist{
+    text-align: left;
+    flex: 4; 
+    overflow-y:scroll;
+    background-color: palegreen;
+  }
 }
