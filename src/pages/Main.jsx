@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import { FetchSpotifyData } from '../utils/FetchSpotifyAPI'
-import { FetchSnData } from '../utils/FetchAPI'
+import { FetchSnDataWithId } from '../utils/FetchAPI'
 import Layout from '../components/Layout'
 function Main() {
   const [snData, setSnData] = useState({})
@@ -8,13 +8,30 @@ function Main() {
   const [spData, setSpData] = useState({})
   const [spDataLoaded, setSpDataLoaded] = useState(false)
 
+  function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) === ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) === 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
 
-  const getSnData = async () => {
-    const snData = await FetchSnData()
+  const getSnDataFromId = async () => {
+    const session_id = getCookie('session_id')
+    const snData = await FetchSnDataWithId(session_id)
     setSnDataLoaded(false)
     setSnData(snData.data)
     setSnDataLoaded(true)
   }
+
   const getSpData = async () => {
     setSpDataLoaded(false)
     try {
@@ -25,10 +42,10 @@ function Main() {
       console.log(error)
       window.location.replace('/')
     }
-
   }
+  
   useEffect(() => {
-    getSnData()
+    getSnDataFromId()
     getSpData()
   }, [])
     
