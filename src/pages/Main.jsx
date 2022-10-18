@@ -24,13 +24,7 @@ function Main() {
     return "";
   }
 
-  const getSnDataFromId = async () => {
-    const session_id = getCookie('session_id')
-    const snData = await FetchSnDataWithId(session_id)
-    setSnDataLoaded(false)
-    setSnData(snData.data)
-    setSnDataLoaded(true)
-  }
+
 
   const getSpData = async () => {
     setSpDataLoaded(false)
@@ -45,6 +39,13 @@ function Main() {
   }
   
   useEffect(() => {
+    const getSnDataFromId = async () => {
+    const session_id = getCookie('session_id')
+    const snData = await FetchSnDataWithId(session_id)
+    setSnDataLoaded(false)
+    setSnData(snData.data)
+    setSnDataLoaded(true)
+  }
     getSnDataFromId()
     getSpData()
   }, [])
