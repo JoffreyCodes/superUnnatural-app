@@ -1,6 +1,8 @@
 import React,{useState, useEffect} from 'react'
 import { FetchSpotifyData } from '../utils/FetchSpotifyAPI'
 import { FetchSnDataWithId } from '../utils/FetchAPI'
+import { PREVIEW_ID } from '../auth'
+
 import Layout from '../components/Layout'
 function Main() {
   const [snData, setSnData] = useState({})
@@ -40,7 +42,8 @@ function Main() {
   
   useEffect(() => {
     const getSnDataFromId = async () => {
-    const session_id = getCookie('session_id')
+    const preview_mode = getCookie('preview_mode')
+    const session_id = preview_mode === "False" ? getCookie('session_id') : PREVIEW_ID
     const snData = await FetchSnDataWithId(session_id)
     setSnDataLoaded(false)
     setSnData(snData.data)
