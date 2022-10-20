@@ -1,5 +1,7 @@
 # SuperUnnatural
 
+[Live Site](http://ec2-184-169-206-2.us-west-1.compute.amazonaws.com/main)
+
 ## Table of contents
 
 - [General info](#general-info)
@@ -34,7 +36,7 @@ SuperUnnatural is a single-page application that allows users to save, play, and
 - AWS
 - Docker
 
-### Back-end [source repo](https://github.com/JoffreyCodes/superUnnatural-api)
+### Back-end [source](https://github.com/JoffreyCodes/superUnnatural-api)
 
 - Python
 - Flask
