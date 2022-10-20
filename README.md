@@ -1,6 +1,6 @@
 # SuperUnnatural
 
-[Live Site](http://ec2-184-169-206-2.us-west-1.compute.amazonaws.com/main)
+[Live Site](http://ec2-54-183-154-39.us-west-1.compute.amazonaws.com)
 
 ## Table of contents
 
