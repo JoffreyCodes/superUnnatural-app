@@ -28,5 +28,4 @@ src/setupTests.js
 src/reportWebVitals.js
 src/App.test.js
 
-/public
 src/components/Navbar/Navbar.jsx
