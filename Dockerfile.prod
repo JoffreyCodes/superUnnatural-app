@@ -1,0 +1,13 @@
+FROM node as build
+WORKDIR /app
+COPY package.json .
+RUN npm install
+COPY . .
+RUN npm run build
+
+FROM nginx
+COPY --from=build /app/build /usr/share/nginx/html
+# Image build cmd:
+# docker build -f Dockerfile.prod -t docker-image-prod .
+# Run container cmd:
+# docker run --env-file ./.env -d -p 8080:80 --name react-app-prod docker-image-prod

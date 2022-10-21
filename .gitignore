@@ -23,7 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 .env
-package-lock.json
 src/setupTests.js
 src/reportWebVitals.js
 src/App.test.js
