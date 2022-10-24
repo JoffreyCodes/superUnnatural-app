@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/superunnatural-app/static/css/main.f93b6005.css",
+    "main.js": "/superunnatural-app/static/js/main.427118b0.js",
+    "index.html": "/superunnatural-app/index.html",
+    "main.f93b6005.css.map": "/superunnatural-app/static/css/main.f93b6005.css.map",
+    "main.427118b0.js.map": "/superunnatural-app/static/js/main.427118b0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f93b6005.css",
+    "static/js/main.427118b0.js"
+  ]
+}
