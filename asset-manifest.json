@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/superUnnatural-app/static/css/main.f93b6005.css",
-    "main.js": "/superUnnatural-app/static/js/main.e6cdea07.js",
+    "main.js": "/superUnnatural-app/static/js/main.92a93ded.js",
     "index.html": "/superUnnatural-app/index.html",
     "main.f93b6005.css.map": "/superUnnatural-app/static/css/main.f93b6005.css.map",
-    "main.e6cdea07.js.map": "/superUnnatural-app/static/js/main.e6cdea07.js.map"
+    "main.92a93ded.js.map": "/superUnnatural-app/static/js/main.92a93ded.js.map"
   },
   "entrypoints": [
     "static/css/main.f93b6005.css",
-    "static/js/main.e6cdea07.js"
+    "static/js/main.92a93ded.js"
   ]
 }
