@@ -25,9 +25,10 @@ function PlaylistTracks(props) {
       window.location.replace('/')
     }
   }
-
   useEffect(() => {
-    getTrackListData(spotifyPlaylistId)
+    if (sessionStorage.getItem('token')) {
+      getTrackListData(spotifyPlaylistId)
+    }
   }, [spotifyPlaylistId])
 
   useEffect(() => {

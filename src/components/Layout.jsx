@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import Navbar from './Navbar/Navbar'
 import Playlists from './Playlist-Panel/Playlists'
 import SpotifyPanel from './SpotifyPanel/SpotifyPanel'
 import WorkoutPanel from './Workout-Panel/WorkoutPanel'
@@ -10,9 +10,9 @@ function Layout(props) {
   const [selectedWorkout, setSelectedWorkout] = useState()
   const [trackListDataLoaded, setTrackListDataLoaded] = useState(false)
   const [spotifyPanelBg, setSpotifyPanelBg] = useState();
-  console.log()
   return (
     <>
+      <div className="navbar"> <Navbar /> </div>
       <div className="layout">
         <div className="row layout">
           <div className="col layout details">

@@ -6,6 +6,23 @@
 .App {
   text-align: left;
 }
+.navbar{
+  position: fixed;
+  width: 100%;
+  background-color: #8f8f8f;
+  height: 25px;
+  z-index: 1;
+}
+.logout-btn{
+  margin: auto;
+  width: 5em;
+}
+.navbar-container{
+  padding: 0 2vw;
+  text-align: right;
+  color: greenyellow
+
+}
 .login-container{
   background-color: lightgoldenrodyellow;
   display: flex;
