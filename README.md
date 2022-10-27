@@ -12,10 +12,8 @@
 
 ## App Snapshot
 
-<details>
-  <summary> Version 1 </summary>
-  <img src="./media/v1.png" height=75%>
-</details>
+  <img src="./media/login-to-main.gif" width=100%>
+  <img src="./media/heart-to-spotify.gif" width=100%>
 <details>
   <summary>Proof of Concept</summary>
   <img src="./media/proof-of-concept.png" height=50%>
