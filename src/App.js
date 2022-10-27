@@ -2,6 +2,7 @@ import './App.css';
 import {useState, useEffect} from 'react'
 import Login from './pages/Login';
 import Main from './pages/Main';
+import { PUBLIC_URL } from './auth/auth';
 
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
       const tokens = getParamsFromHash(hash);
       sessionStorage.setItem('token_expr', currUnix + parseInt(tokens.expires_in))
       sessionStorage.setItem('token', tokens.access_token)
-      window.location.replace('/')
+      window.location.replace(PUBLIC_URL)
     }
   }, [currUnix])
   return (

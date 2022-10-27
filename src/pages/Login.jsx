@@ -1,5 +1,5 @@
 import React from 'react';
-import { CLIENT_ID, CLIENT_SECRET, SPOTIFY_AUTHORIZE_ENDPOINT, REDIRECT_URL_AFTER_LOGIN, SCOPES_URL_PARAM, PREVIEW_ID } from '../auth'
+import { CLIENT_ID, CLIENT_SECRET, SPOTIFY_AUTHORIZE_ENDPOINT, REDIRECT_URL_AFTER_LOGIN, SCOPES_URL_PARAM, PREVIEW_ID } from '../auth/auth'
 import { ImSpotify } from 'react-icons/im'
 
 const Login = (props) => {

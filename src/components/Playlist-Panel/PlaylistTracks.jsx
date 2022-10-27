@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { FetchPlaylistData, UserSavedTrack } from '../../utils/FetchSpotifyAPI'
 import PlaylistBanner from './PlaylistBanner'
 import Track from './Track'
+import { PUBLIC_URL } from '../../auth/auth'
 
 function PlaylistTracks(props) {
   const spotifyPlaylistId = props.spotifyPlaylistId
@@ -22,7 +23,7 @@ function PlaylistTracks(props) {
       setTrackListDataLoaded(true)
     } catch (error) {
       console.log(error)
-      window.location.replace('/')
+      window.location.replace(PUBLIC_URL)
     }
   }
   useEffect(() => {
