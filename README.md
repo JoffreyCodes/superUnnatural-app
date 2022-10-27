@@ -1,6 +1,6 @@
 # SuperUnnatural
 
-[SuperUnnatural Live Page](https://github.com/JoffreyCodes/superUnnatural-app)
+[SuperUnnatural Live Page](https://joffreycodes.github.io/superUnnatural-app/)
 
 ## Table of contents
 
