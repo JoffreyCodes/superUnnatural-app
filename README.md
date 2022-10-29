@@ -74,8 +74,9 @@ Proof of Concept:
 **Future Works:**
 
 - AWS Hosting
-  - Back-end - Completed
-  - Front-end - In Progress
+  - Full-stack app that is functional using the Docker network
+    - Back-end - Completed
+    - Front-end - In Progress
 - Spotify Player Integration - Completed
   - Integrated Spotify Player - Completed
   - Track Preview Selector - Completed
