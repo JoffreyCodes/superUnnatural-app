@@ -324,3 +324,70 @@ svg.boxing-icon{
     background-color: palegreen;
   }
 }
+@media (max-width: 425px){
+  .login-panel{
+    background-color: whitesmoke;
+    align-self: center;
+    height: 80vh;
+    width: 75vw;
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow: -12px 13px 0px 0px black;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 425px){
+  .login-container{
+    background-color: lightgoldenrodyellow;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+  }
+}
+@media (max-width: 425px){
+  .row.layout{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+@media(max-width:425px){
+  .col.layout.details{
+    display:none;
+  }
+}
+@media(max-width:425px){
+  .col.layout.spotify{
+    flex: 1;
+    background-color: palegreen;
+  }
+}
+@media(max-width:425px){
+  .col.layout.playlist{
+    flex: 8;
+  }
+}
+@media(max-width:425px){
+  .playlist.container{
+    box-shadow: none;
+  }
+}
+@media(max-width:425px){
+  .spotify.container{
+    margin: 1% 0 ;
+  }
+}
+@media(max-width:425px){
+  #sp-playlist{
+    display:none;
+  }
+}
+@media(max-width:425px){
+  #spotifyPlayerId{
+    height:80px;
+    border: none;
+    box-shadow: none;
+    width: 98%;
+  }
+}
+

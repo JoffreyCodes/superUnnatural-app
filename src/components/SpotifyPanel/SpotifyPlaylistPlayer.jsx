@@ -4,6 +4,7 @@ function SpotifyPlaylistPlayer(props) {
     return (    
         <>
             <iframe
+                id="sp-playlist"
                 title="sp-playlist"
                 style={{"borderRadius":"12px"}}
                 src={`https://open.spotify.com/embed/playlist/${props.selectedWorkout}?utm_source=generator`}
