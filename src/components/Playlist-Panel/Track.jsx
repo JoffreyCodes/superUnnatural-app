@@ -12,8 +12,8 @@ function Track(props) {
 
   return (
     <>
-      <div className="col track left" onClick={handleTrackClick}>
-        <img className="album image" src={trackObj.track.album.images[1].url} alt={trackObj.track.name} />
+      <div className="album-image-container" onClick={handleTrackClick}>
+        <img className="album-image" src={trackObj.track.album.images[1].url} alt={trackObj.track.name} />
       </div>
       <div className="track-display-container" onClick={handleTrackClick}>
         <div className="track-display">
@@ -31,7 +31,7 @@ function Track(props) {
         <div className="track-preview-player">
           <PreviewPlayer id={props.id} previewUrl={trackObj.track.preview_url} />      
         </div>
-      </div>      
+      </div>
     </>
   )
 }

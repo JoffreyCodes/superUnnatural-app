@@ -167,7 +167,7 @@ img.banner{
   border-bottom-left-radius: 15px;
 }
 
-.col.track.left{
+.album-image-container{
   flex: 1;  
 }
 .track-display-container{
@@ -234,10 +234,34 @@ audio{
   height: -webkit-fill-available;
   border-radius: 90px;
 }
-img.album.image{
+img.album-image{
   height:100%;
   border-radius: 15px;
   border: 1px solid white;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+.modal-main {
+  position:fixed;
+  background: white;
+  width: 33%;
+  height: 75%;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+.display-block {
+  display: block;
+  z-index: 1;
+}
+.display-none {
+  display: none;
 }
 
 /* Spotify Columm */
