@@ -190,7 +190,6 @@ img.banner{
 .track-preview-player{
   height: 30%;
 }
-
 p.track-info-title{
   font-size: 0.8em;
   color: white;
@@ -201,24 +200,34 @@ p.track-info-artist{
   color: lightgrey;
   margin-block-start: 0px;
 }
-.heart-container{
-  width: fit-content;
+.album.image{
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
-p.heart.save{
-  font-size: 72px;
-  line-height: 60px;
-  margin:0;
+.note-container{
+  padding: 5% 2%;
+}
+svg.note{
   cursor: pointer;
   user-select: none; /* For Chrome and Opera */
   -ms-user-select: none; /* For Internet Edge and Explorer*/
   -webkit-user-select: none; /* For Safari */
   -moz-user-select: none; /* For Firefox */
 }
-.album.image{
-  height:100%;
-  display: flex;
-  justify-content: center;
-  align-items: center; 
+svg.note.filled{
+  color: greenyellow;
+}
+.heart-container{
+  padding: 5% 2%;
+}
+svg.heart{
+  cursor: pointer;
+  user-select: none; /* For Chrome and Opera */
+  -ms-user-select: none; /* For Internet Edge and Explorer*/
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none; /* For Firefox */
 }
 audio{
   width: 100%;

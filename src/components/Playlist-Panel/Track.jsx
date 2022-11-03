@@ -1,5 +1,6 @@
 import React from 'react'
 import Heartbox from './Heartbox'
+import Note from './Note'
 import PreviewPlayer from './PreviewPlayer'
 
 function Track(props) {
@@ -21,6 +22,7 @@ function Track(props) {
             <p className="track-info-artist">{trackObj.track.artists[0].name}</p>
           </div>
           <div className="track-display-btns">
+            <Note />
             <Heartbox id={props.trackObj.track.id}
               trackObj={props.trackObj}
             />

@@ -1,4 +1,5 @@
-import React, { useState, useEffect }from 'react'
+import React, { useState, useEffect } from 'react'
+import {RiHeartAddLine, RiHeartFill} from  'react-icons/ri'
 import { UserAddTrackToSave, UserDelTrackToSave } from '../../utils/FetchSpotifyAPI'
 import { FetchSpAlbumColor } from '../../utils/FetchAPI'
 
@@ -41,21 +42,12 @@ function Heartbox(props) {
         getBgColor()
         }    
     }, [isSaved, bgColor, props.id])
-    
-    const styleObj =
-    {
-        color: bgColor
-    }
     return (
         <div className="heart-container" onClick={handleCheckboxClick}>
             { isSaved ?
-                <p className="heart save filled" style={styleObj}>
-                    ♥
-                </p>
+                <RiHeartFill className="heart filled" size='3em' color={bgColor} />
             :
-                <p className="heart save unfilled" >
-                    ♡
-                </p>
+                <RiHeartAddLine className="heart unfilled" size='3em' />
             }
         </div>
         )
