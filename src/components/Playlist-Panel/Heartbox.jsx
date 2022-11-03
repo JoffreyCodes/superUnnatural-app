@@ -47,19 +47,17 @@ function Heartbox(props) {
         color: bgColor
     }
     return (
-        <>
+        <div className="heart-container" onClick={handleCheckboxClick}>
             { isSaved ?
-                <h1
-                    className="heart save filled"
-                    onClick={handleCheckboxClick}
-                    style={styleObj}
-                >
+                <p className="heart save filled" style={styleObj}>
                     ♥
-                </h1>
+                </p>
             :
-            <h1 className="heart save unfilled" onClick={handleCheckboxClick}>♡</h1>
+                <p className="heart save unfilled" >
+                    ♡
+                </p>
             }
-        </>
+        </div>
         )
 }
 

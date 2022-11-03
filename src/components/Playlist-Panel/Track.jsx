@@ -14,23 +14,22 @@ function Track(props) {
       <div className="col track left" onClick={handleTrackClick}>
         <img className="album image" src={trackObj.track.album.images[1].url} alt={trackObj.track.name} />
       </div>
-      <div className="col track mid" onClick={handleTrackClick}>
-        <div className="row track info title">
-          <p className="track-info-title">{trackObj.track.name}</p>
+      <div className="track-display-container" onClick={handleTrackClick}>
+        <div className="track-display">
+          <div className="track-display-info">
+            <p className="track-info-title">{trackObj.track.name}</p>
+            <p className="track-info-artist">{trackObj.track.artists[0].name}</p>
+          </div>
+          <div className="track-display-btns">
+            <Heartbox id={props.trackObj.track.id}
+              trackObj={props.trackObj}
+            />
+          </div>
         </div>
-        <div className="row track info artist">
-          <p className="track-info-artist">{trackObj.track.artists[0].name}</p>
-        </div>
-        <div className="row track info player">
+        <div className="track-preview-player">
           <PreviewPlayer id={props.id} previewUrl={trackObj.track.preview_url} />      
         </div>
-      </div>
-      <div className="col track checkbox">
-        <Heartbox id={props.trackObj.track.id}
-          trackObj={props.trackObj}
-        />
-      </div>
-      
+      </div>      
     </>
   )
 }

@@ -170,16 +170,27 @@ img.banner{
 .col.track.left{
   flex: 1;  
 }
-.col.track.mid {
-  text-align: left;
+.track-display-container{
   flex:5 1;
-  flex-direction: column;
-  align-items: flex-end;
+  margin-left: 1%;
 }
-.row.track.info{
-  height:var(--TRACK-INFO-HEIGHT);
-  padding-left: 5px;
+.track-display{
+  height: 70%;
+  display:flex;
 }
+.track-display-info{
+  width:60%
+}
+.track-display-btns{
+  width:40%;
+  display: flex;
+  padding-bottom:1%;
+  justify-content: flex-end;
+}
+.track-preview-player{
+  height: 30%;
+}
+
 p.track-info-title{
   font-size: 0.8em;
   color: white;
@@ -190,13 +201,13 @@ p.track-info-artist{
   color: lightgrey;
   margin-block-start: 0px;
 }
-.col.track.checkbox {
-  display: flex;
-  justify-content: center;
-  align-items: center; 
+.heart-container{
+  width: fit-content;
 }
-h1.heart.save{
-  font-size: 3em;
+p.heart.save{
+  font-size: 72px;
+  line-height: 60px;
+  margin:0;
   cursor: pointer;
   user-select: none; /* For Chrome and Opera */
   -ms-user-select: none; /* For Internet Edge and Explorer*/
@@ -211,7 +222,7 @@ h1.heart.save{
 }
 audio{
   width: 100%;
-  height: auto;
+  height: -webkit-fill-available;
   border-radius: 90px;
 }
 img.album.image{
