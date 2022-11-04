@@ -18,7 +18,9 @@ function PlaylistTracks(props) {
       data.tracks.items.map((track, i) => track['user_saved'] = false)
       const trackIdList = data.tracks.items.map(trackObj => trackObj.track.id)
       const userSavedData = await UserSavedTrack(trackIdList)
-      data.tracks.items.map((track,i)=>track['user_saved'] = userSavedData[i])
+      data.tracks.items.map((track, i) => track['user_saved'] = userSavedData[i])
+      const snSongIdList = props.workout.snSongIdList
+      data.tracks.items.map((track, i) => track['snSongId'] = snSongIdList[i])
       setTrackListData(data)
       setTrackListDataLoaded(true)
     } catch (error) {

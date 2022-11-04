@@ -27,10 +27,10 @@ const Login = (props) => {
             </label><br />
             <input type="text" id="sessionId" name="sessionId"/><br/> 
           </form>
-          <button className="btn login" onClick={() => handleLogin()}>Login</button>
+          <button className="login-panel-btn login" onClick={() => handleLogin()}>Login</button>
           <hr className="horizontal"/>
           <h3>Or preview with your Spotify account below!</h3>
-          <button onClick={() => handlePreview()}>Preview</button>  
+          <button className="login-panel-btn preview"onClick={() => handlePreview()}>Preview</button>  
         </div>        
       </div>
     </div>      

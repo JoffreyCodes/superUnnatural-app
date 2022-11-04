@@ -64,3 +64,17 @@ export const UserDelTrackToSave = (trackId) => {
   }
   return getData()
 }
+
+export const GetCurrUserSpProfile = () => {
+  const USER_GET = `https://api.spotify.com/v1/me`
+  async function getData(){
+    const response = await axios.get(USER_GET, {
+      headers: {
+          Authorization: `Bearer ${TOKEN}`
+      }
+    })
+    console.log(response.data)
+    return response.data
+  }
+  return getData()
+}

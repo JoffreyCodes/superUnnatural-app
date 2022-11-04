@@ -13,15 +13,20 @@
   height: 25px;
   z-index: 1;
 }
-.logout-btn{
-  margin: auto;
-  width: 5em;
-}
+
 .navbar-container{
   padding: 0 2vw;
   text-align: right;
-  color: greenyellow
+  color: greenyellow;
+  display:flex;
+  justify-content: space-between;
+}
+.navbar-spHandle{
 
+}
+.logout-btn{
+  /* margin: auto;
+  width: 5em; */
 }
 .login-container{
   background-color: lightgoldenrodyellow;
@@ -50,6 +55,13 @@
   padding:0 5%;
   text-align: center;
 }
+button.login-panel-btn{
+  background-color: greenyellow;
+
+  height: 10%; 
+  width: 27%;
+  margin: 0.5em;
+}
 input{
   border-radius: 7px;
   width: 200px;
@@ -58,10 +70,7 @@ input{
 button{
   color: black;
   background-color: #adff2f50;
-  height: 10%;
-  width: 27%;
   border-radius: 15px;
-  margin: 0.5em;
   border-color: #adff2f50;
   border-style: solid;
   transition: color .15s 

@@ -9,7 +9,6 @@ const PREVIEW_ID = process.env.REACT_APP_PREVIEW_ID
 const SPACE_DELIMITER = "%20";
 const SCOPES = [
     "user-top-read",
-    "user-read-private",
     "user-library-read",
     "user-library-modify"       
 ];
