@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react'
-import { FetchSpotifyData } from '../utils/FetchSpotifyAPI'
+import { FetchSpotifyData, GetCurrUserSpProfile } from '../utils/FetchSpotifyAPI'
 import { FetchSnDataWithId } from '../utils/FetchAPI'
 
 import Layout from '../components/Layout'
@@ -8,6 +8,8 @@ function Main(props) {
   const [snDataLoaded, setSnDataLoaded] = useState(false)
   const [spData, setSpData] = useState({})
   const [spDataLoaded, setSpDataLoaded] = useState(false)
+  const [spUserProfileData,setSpUserProfileData] = useState('')
+  const [spUserProfileDataLoaded,setSpUserProfileDataLoaded] = useState(false)
 
   const getSpData = async () => {
     setSpDataLoaded(false)
@@ -31,7 +33,31 @@ function Main(props) {
     getSnDataFromId()
     getSpData()
   }, [props.user])
-    
+
+  const getCurrUserSpProfile = async () => {
+    try {
+      const fetchSpUserProfileData = await GetCurrUserSpProfile()
+      setSpUserProfileData(fetchSpUserProfileData)
+      setSpUserProfileDataLoaded(true)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  const token = sessionStorage.getItem('token')
+
+  useEffect(() => {
+    if (typeof token !== 'undefined') {
+      getCurrUserSpProfile()
+    }
+  }, [token])
+
+  useEffect(() => {
+    if (spUserProfileDataLoaded) {
+      sessionStorage.setItem('spotify_display_name', spUserProfileData.display_name)
+      sessionStorage.setItem('spotify_id', spUserProfileData.id)
+    }
+  }, [spUserProfileDataLoaded])
+  
   return (
     <>
       <Layout

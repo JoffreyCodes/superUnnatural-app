@@ -10,7 +10,8 @@ function NoteModal(props) {
         <div className="modal-main">
           <button type="button" onClick={handleClose}>
             Close
-          </button>
+        </button>
+        <p>id: {props.snSongId}</p>
       </div>
     </div>
   )

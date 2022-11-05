@@ -8,35 +8,65 @@ function PlaylistTracks(props) {
   const spotifyPlaylistId = props.spotifyPlaylistId
   const [trackListData, setTrackListData] = useState({})
   const [trackListDataLoaded, setTrackListDataLoaded] = useState(false)
+  const [userSavedData, setUserSavedData] = useState([])
+  const [userSavedDataLoaded, setUserSavedDataLoaded] = useState(false)
+  const [trackListMod, setTrackListMod] = useState({})
+  const [trackListModLoaded, setTrackListModLoaded] = useState(false)
 
-
-  
   const getTrackListData = async(spotifyPlaylistId) => {
     try {
-      setTrackListDataLoaded(false)
-      let data = await FetchPlaylistData(spotifyPlaylistId)
-      data.tracks.items.map((track, i) => track['user_saved'] = false)
-      const trackIdList = data.tracks.items.map(trackObj => trackObj.track.id)
-      const userSavedData = await UserSavedTrack(trackIdList)
-      data.tracks.items.map((track, i) => track['user_saved'] = userSavedData[i])
-      const snSongIdList = props.workout.snSongIdList
-      data.tracks.items.map((track, i) => track['snSongId'] = snSongIdList[i])
+      const data = await FetchPlaylistData(spotifyPlaylistId)
       setTrackListData(data)
-      setTrackListDataLoaded(true)
+      setTrackListDataLoaded(true)   
+      props.setTrackListDataLoaded(true)    
+
     } catch (error) {
       console.log(error)
       window.location.replace(PUBLIC_URL)
     }
   }
-  useEffect(() => {
-    if (sessionStorage.getItem('token')) {
-      getTrackListData(spotifyPlaylistId)
+
+  const getUserSavedData = async () => {
+    try {
+      const trackIdList = trackListData.tracks.items.map(trackObj => trackObj.track.id)
+      const userSavedData = await UserSavedTrack(trackIdList)
+      setUserSavedData(userSavedData)
+      setUserSavedDataLoaded(true)    
+    } catch (error) {
+      console.log(error)
+      window.location.replace(PUBLIC_URL)
+    }    
+  }
+
+
+  const modifyTrackList = () => {
+    const snSongIdList = props.workout.snSongIdList
+    const userSavedNotesList = props.userSavedNotes.map((id)=>id.SnTrackId)
+    const trackItems = trackListData.tracks.items    
+
+    for (let i = 0; i < trackItems.length; i++){
+      trackItems[i]['user_saved'] = userSavedData[i]
+      trackItems[i]['snSongId'] = snSongIdList[i]
+      trackItems[i]['hasNote'] = userSavedNotesList.includes(trackItems[i]['snSongId']) ? true : false
     }
-  }, [spotifyPlaylistId])
+    setTrackListMod(trackItems)
+    setTrackListModLoaded(true)
+  }
+
+  const token = sessionStorage.getItem('token')
 
   useEffect(() => {
-    props.setTrackListDataLoaded(trackListDataLoaded)
-  })
+    if (typeof token !== 'undefined') { getTrackListData(spotifyPlaylistId) }
+  }, [token])
+
+  useEffect(() => {
+    if (trackListDataLoaded) { getUserSavedData() }
+  }, [trackListDataLoaded])
+
+  useEffect(() => {
+    if (userSavedDataLoaded) { modifyTrackList()}
+  }, [userSavedDataLoaded])
+  
   return (
     <>
       <PlaylistBanner
@@ -44,10 +74,14 @@ function PlaylistTracks(props) {
         workout={props.workout}
         trackListDataLoaded={trackListDataLoaded}
         trackListData={trackListData} />
-      {trackListDataLoaded ? trackListData.tracks.items.map((trackObj, key) => {
+      {trackListModLoaded ? trackListMod.map((trackObj, key) => {
         return (
             <div key={key} className={`row track container pl-${props.plId} tr-${key}`} id={trackObj.track.id} >
-            <Track trackObj={trackObj} setTrackClick={props.setTrackClick} id={trackObj.track.id} />
+            <Track
+              trackObj={trackObj}
+              setTrackClick={props.setTrackClick}
+              id={trackObj.track.id}
+            />
             </div>
         )
       }): "loading..."}

@@ -30,7 +30,6 @@ function Layout(props) {
               setSpotifyPanelBg={setSpotifyPanelBg}
             />
           </div>
-
           <div className="col layout playlist">
             <Playlists snData={props.snData}
               snDataLoaded={props.snDataLoaded}

@@ -22,7 +22,10 @@ function Track(props) {
             <p className="track-info-artist">{trackObj.track.artists[0].name}</p>
           </div>
           <div className="track-display-btns">
-            <Note />
+            <Note
+              snSongId={props.trackObj.snSongId}
+              hasNote={props.trackObj.hasNote}
+            />
             <Heartbox id={props.trackObj.track.id}
               trackObj={props.trackObj}
             />

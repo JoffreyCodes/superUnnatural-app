@@ -1,4 +1,5 @@
 import axios from 'axios';
+const FormData = require('form-data');
 
 const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
@@ -41,3 +42,44 @@ export const FetchSpAlbumColor =  (trackId) => {
   }
   return getData(trackId)
 }
+
+export const GetUserNotes =  (spUserId) => {
+  async function getData() {
+    const userNotesEndpoint = API_ENDPOINT + '/userNotes/' + spUserId
+    const res = await axios.get(userNotesEndpoint, {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      }
+    })
+    return res.data
+  }
+  return getData()
+}
+
+// export const GetUserNotes =  (spUserId) => {
+//   async function getData() {
+//     const userNotesEndpoint = API_ENDPOINT + '/userNotes'
+
+//     const form = new FormData();
+//     form.append('SpUserId', 1)
+//     const res = await axios.post(API_ENDPOINT + `/userNotes`, form, {
+//       headers: { 'Content-Type': `multipart/form-data; boundary=${form._boundary}` }
+//     })
+    // const res = axios({
+    //   method: "GET",
+    //   url: userNotesEndpoint,
+    //   data: form,
+    //   headers: {
+    //     'Content-Type': `multipart/form-data; boundary=${form._boundary}`,
+    //   },
+    // })
+    //   .then(function (response) {
+    //     //handle success
+    //     console.log(response);
+    //   })
+    //   .catch(function (response) {
+    //     //handle error
+    //     console.log(response);
+    //   });
+
