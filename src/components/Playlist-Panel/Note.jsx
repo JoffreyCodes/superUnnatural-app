@@ -1,13 +1,13 @@
 import React, { useState, useEffect }from 'react'
 import {FaRegStickyNote, FaStickyNote} from  'react-icons/fa'
-import NoteModal from './NoteModal'
+import NoteModalLayout from './NoteModal/NoteModalLayout'
 
 function Note(props) {
-  const [hasNote, setHasNote] = useState(props.hasNote)
+  const [hasNote, setHasNote] = useState(props.trackObj.hasNote)
   const [showNoteModal, setShowNoteModal] = useState(false)
-
+  
   const handleCheckboxClick = () => {
-    setShowNoteModal(!showNoteModal)
+    setShowNoteModal(true)
   }
 
 
@@ -20,11 +20,14 @@ function Note(props) {
             <FaRegStickyNote className="note unfilled" size='3em' />
         }
       </div>
-      <NoteModal
-        showNoteModal={showNoteModal}
-        setShowNoteModal={setShowNoteModal}
-        snSongId={props.snSongId}
-      />
+      {showNoteModal ? 
+        <NoteModalLayout
+          showNoteModal={showNoteModal}
+          setShowNoteModal={setShowNoteModal}
+          trackObj={props.trackObj}
+        />
+        : null}
+
     </>
   )
 }

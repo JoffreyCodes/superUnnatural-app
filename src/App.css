@@ -248,7 +248,7 @@ img.album-image{
   border-radius: 15px;
   border: 1px solid white;
 }
-.modal {
+/* .modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -271,7 +271,7 @@ img.album-image{
 }
 .display-none {
   display: none;
-}
+} */
 
 /* Spotify Columm */
 .spotify.inner.panel{

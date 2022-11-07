@@ -57,7 +57,21 @@ export const GetUserNotes =  (spUserId) => {
   return getData()
 }
 
-// export const GetUserNotes =  (spUserId) => {
+export const GetUserNote =  (spUserId, snSongId) => {
+  async function getData() {
+    const userNotesEndpoint = API_ENDPOINT+'/userNote/'+spUserId+'/'+snSongId 
+    const res = await axios.get(userNotesEndpoint, {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      }
+    })
+    return res.data
+  }
+  return getData()
+}
+
+// export const PostUserNote =  (spUserId) => {
 //   async function getData() {
 //     const userNotesEndpoint = API_ENDPOINT + '/userNotes'
 
@@ -66,20 +80,20 @@ export const GetUserNotes =  (spUserId) => {
 //     const res = await axios.post(API_ENDPOINT + `/userNotes`, form, {
 //       headers: { 'Content-Type': `multipart/form-data; boundary=${form._boundary}` }
 //     })
-    // const res = axios({
-    //   method: "GET",
-    //   url: userNotesEndpoint,
-    //   data: form,
-    //   headers: {
-    //     'Content-Type': `multipart/form-data; boundary=${form._boundary}`,
-    //   },
-    // })
-    //   .then(function (response) {
-    //     //handle success
-    //     console.log(response);
-    //   })
-    //   .catch(function (response) {
-    //     //handle error
-    //     console.log(response);
-    //   });
+//     const res = axios({
+//       method: "GET",
+//       url: userNotesEndpoint,
+//       data: form,
+//       headers: {
+//         'Content-Type': `multipart/form-data; boundary=${form._boundary}`,
+//       },
+//     })
+//       .then(function (response) {
+//         //handle success
+//         console.log(response);
+//       })
+//       .catch(function (response) {
+//         //handle error
+//         console.log(response);
+//       });
 
