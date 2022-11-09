@@ -14,10 +14,36 @@
 .user-notes-display{
     height: 95%;
 }
-.user-note-flexbox{
-    display:flex;
+.note-container{
+    width:85%;
+    margin-left: 2%;
+}
+
+.note-flexbox{
+    display: flex;
     flex-direction: column;
 }
+.note-created-row{
+    background-color: red;
+    flex:1;
+    font-size: xx-small;
+    align-self: end;
+}
+.note-content-row{
+    background-color: blue;
+    word-wrap: break-word;
+    flex:8
+}
+.note-btns-row{
+    background-color: green;
+    flex:3
+}
+.note-btns-flexbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+/* Create note */
 .create-note-container{
     flex:1.5;
 }
@@ -41,7 +67,7 @@ form.new-note-form{
     width:100%;
 }
 input.new-note-textbox{
-    width:95%;
+    width:100%;
     height:1.5em;
     margin:0;
     border: none;

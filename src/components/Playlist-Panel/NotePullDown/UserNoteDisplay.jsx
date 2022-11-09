@@ -3,42 +3,44 @@ import { GetUserNote } from '../../../utils/FetchAPI'
 import NoteDisplay from './NoteDisplay'
 
 function UserNoteDisplay(props) {
-  // naming convention is 'notes' because each track has a note which can include multiple notes
-  const [userNotes, setUserNotes] = useState([])
+  const [userNotesHx, setUserNotesHx] = useState([])
   const [dataLoaded, setDataLoaded] = useState(false)
 
   const spotify_id = sessionStorage.getItem('spotify_id')
 
   const getUserNote = async (spotify_id, snSongId) => {
     try {
-      const userNotes = await GetUserNote(spotify_id, snSongId)
-      setUserNotes(userNotes)
+      const fetch_userNotesHx = await GetUserNote(spotify_id, snSongId)
+      setUserNotesHx(fetch_userNotesHx)
       setDataLoaded(true)
-      props.setNewNoteCreated(false)
+      props.setReloadNotes(false)
     } catch (error) {
       console.log(error)
     }
   }
 
   useEffect(() => {
-    if ((props.trackObj.hasNote && !dataLoaded) || props.newNoteCreated ) {
+    if ((props.trackObj.hasNote && !dataLoaded) || props.reloadNotes ) {
       getUserNote(spotify_id, props.trackObj.snSongId)
     }
-  }, [dataLoaded, props.trackObj.hasNote, userNotes, props.newNoteCreated])
+  }, [dataLoaded, props.trackObj.hasNote, userNotesHx, props.reloadNotes])
   
 
   return (
     <div className="user-notes-display">
-      <div className="user-note-flexbox">
-        {userNotes.map((note,i) => {
+        {userNotesHx.map((note,i) => {
             return (
               <div className="user-note-container" key={i}>
-                <NoteDisplay Content={note.Content} />
+                <NoteDisplay
+                  setReloadNotes={props.setReloadNotes}
+                  content={note.Content}
+                  created={note.Created}
+                  noteId={note.NoteId}
+                />
               </div>            
             )
           })}
       </div>
-    </div>
   )
 }
 

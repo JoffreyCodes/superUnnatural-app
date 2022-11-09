@@ -12,7 +12,7 @@ function CreateNoteDisplay(props) {
         const status = await PostUserNote(userSpId, props.trackObj.workoutId, props.trackObj.snSongId, newNoteText)
         if (status === 200) {
           setNewNoteText('')
-          props.setNewNoteCreated(true)
+          props.setReloadNotes(true)
         }
       } catch (error) {
           console.log(error)
