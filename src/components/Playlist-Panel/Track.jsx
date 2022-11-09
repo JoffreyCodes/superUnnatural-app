@@ -6,6 +6,8 @@ import PreviewPlayer from './PreviewPlayer'
 
 function Track(props) {
   const [showNotePulldown, setShowNotePulldown] = useState(false);
+  const [hasNote, setHasNote] = useState(props.trackObj.hasNote)
+
   const trackObj = props.trackObj
 
   const handleTrackClick = () => {
@@ -29,8 +31,9 @@ function Track(props) {
             <p className="track-info-artist">{trackObj.track.artists[0].name}</p>
           </div>
           <div className="track-display-btns">
-              <Note trackObj={trackObj}
-                noteClick={handleNoteClick} />
+            <Note trackObj={trackObj}
+              hasNote={hasNote}
+              noteClick={handleNoteClick} />
             <Heartbox id={props.trackObj.track.id}
               trackObj={props.trackObj} 
             />
@@ -43,7 +46,10 @@ function Track(props) {
       </div>
       {showNotePulldown ?
         <div className="notes-container">
-          <NotePullDownLayout trackObj={trackObj} />
+          <NotePullDownLayout
+            setHasNote={setHasNote}
+            trackObj={trackObj}
+          />
         </div>
         : null}
     </div>

@@ -11,6 +11,7 @@ function NotePullDownLayout(props) {
         <UserNoteDisplay trackObj={props.trackObj}
           reloadNotes={reloadNotes}
           setReloadNotes={setReloadNotes}
+          setHasNote={props.setHasNote}
         />
       </div>
       <div className="create-note-container">

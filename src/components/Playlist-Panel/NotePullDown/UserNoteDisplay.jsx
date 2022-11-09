@@ -11,6 +11,7 @@ function UserNoteDisplay(props) {
   const getUserNote = async (spotify_id, snSongId) => {
     try {
       const fetch_userNotesHx = await GetUserNote(spotify_id, snSongId)
+      fetch_userNotesHx.length === 0  ? props.setHasNote(false) : props.setHasNote(true)
       setUserNotesHx(fetch_userNotesHx)
       setDataLoaded(true)
       props.setReloadNotes(false)
