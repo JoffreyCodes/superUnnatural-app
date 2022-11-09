@@ -10,38 +10,90 @@
     flex:5;
     border: 1px solid black;
     overflow-y: auto;
-}
-.user-notes-display{
-    height: 95%;
-}
-.note-container{
-    width:85%;
-    margin-left: 2%;
+    background-color: lightgoldenrodyellow;
+    border-radius: 15px;
 }
 
+/* Scrollbar */
+.user-notes-container::-webkit-scrollbar{
+	width: 10px;
+    border-radius: 25px;
+}
+.user-notes-container::-webkit-scrollbar-track{
+	border-radius: 25px;
+	background-color: transparent;
+}
+.user-notes-container::-webkit-scrollbar-thumb{
+	border-radius: 25px;
+	background-color: greenyellow;
+}
+.user-notes-container::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 10px; 
+}
+.user-notes-container::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 10px; 
+}
+
+.user-notes-display{
+}
+.note-container{
+    border: 1px solid black;
+    border-radius: 15px;;
+    margin: 3% 5% 5% 5%;
+    background-color: #c9ff75d1;
+}
 .note-flexbox{
     display: flex;
     flex-direction: column;
 }
 .note-created-row{
-    background-color: red;
     flex:1;
     font-size: xx-small;
     align-self: end;
+    margin-right: 5%;
 }
 .note-content-row{
-    background-color: blue;
     word-wrap: break-word;
-    flex:8
+    flex:8;
+    margin-left:4%;
+}
+textarea.edit-note-text{
+    resize: vertical;
+    width: 80%;
+    background-color: #c9ff75d1;
+    font-family: inherit;
+    font-size:medium;
+    min-height: 1.25em;
+    max-height: 5em;
 }
 .note-btns-row{
-    background-color: green;
-    flex:3
+    border-top: 1px solid black;
+    flex:3;
 }
 .note-btns-flexbox{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+.note-delete-btn{
+    background-color: transparent;
+    border-color: transparent;
+}
+.note-delete-btn:hover{
+    background-color: transparent;
+    border-color: transparent;
+    color: red;
+}
+.note-edit-btn{
+    background-color: transparent;
+    border-color: transparent;
+}
+.note-edit-btn:hover{
+    background-color: transparent;
+    border-color: transparent;
+    color: green;
 }
 /* Create note */
 .create-note-container{

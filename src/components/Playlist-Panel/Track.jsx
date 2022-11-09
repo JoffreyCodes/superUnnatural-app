@@ -17,7 +17,7 @@ function Track(props) {
   }
   
   return (
-    <div className="track-container" key={props.key}> 
+    <div className="track-container"> 
     <div className="track-flexbox">
       <div className="album-image-container" onClick={handleTrackClick}>
         <img className="album-image" src={trackObj.track.album.images[1].url} alt={trackObj.track.name} />
