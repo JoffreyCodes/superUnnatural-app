@@ -22,7 +22,6 @@ function Playlists(props) {
   useEffect(() => {    
     if (typeof spIdToken !== 'undefined') {getUserSavedNotes(spIdToken)}
   }, [spIdToken])
-  
   return (
     <>
       {props.snDataLoaded && userSavedNotesLoaded ?

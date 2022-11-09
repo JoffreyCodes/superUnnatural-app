@@ -27,7 +27,7 @@ function Main(props) {
       const session_id = props.user
       const snData = await FetchSnDataWithId(session_id)
       setSnDataLoaded(false)
-      setSnData(snData.data.slice(0,1))
+      setSnData(snData.data.slice(2,3))
       setSnDataLoaded(true)
     }
     getSnDataFromId()

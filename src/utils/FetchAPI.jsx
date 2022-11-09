@@ -71,29 +71,46 @@ export const GetUserNote =  (spUserId, snSongId) => {
   return getData()
 }
 
-// export const PostUserNote =  (spUserId) => {
-//   async function getData() {
-//     const userNotesEndpoint = API_ENDPOINT + '/userNotes'
-
-//     const form = new FormData();
-//     form.append('SpUserId', 1)
-//     const res = await axios.post(API_ENDPOINT + `/userNotes`, form, {
-//       headers: { 'Content-Type': `multipart/form-data; boundary=${form._boundary}` }
-//     })
-//     const res = axios({
-//       method: "GET",
-//       url: userNotesEndpoint,
-//       data: form,
-//       headers: {
-//         'Content-Type': `multipart/form-data; boundary=${form._boundary}`,
-//       },
-//     })
-//       .then(function (response) {
-//         //handle success
-//         console.log(response);
-//       })
-//       .catch(function (response) {
-//         //handle error
-//         console.log(response);
-//       });
+export const UpdateUserNote =  (noteId, newContent) => {
+  async function getData() {
+    const userNotesEndpoint = API_ENDPOINT + '/userNote'
+    const form = new FormData();
+    form.append('NoteId', noteId)
+    form.append('Content', newContent)
+    const res = await axios.put(userNotesEndpoint, form, {
+      headers: { 'Content-Type': `multipart/form-data; boundary=${form._boundary}` }
+    })
+    return res.status
+  }
+  return getData();
+}
+export const PostUserNote =  (SpUserId,SnWorkoutId, SnTrackId, Content) => {
+  async function getData() {
+    const userNotesEndpoint = API_ENDPOINT + '/userNote'
+    const form = new FormData();
+    form.append('SpUserId', SpUserId)
+    form.append('SnWorkoutId', SnWorkoutId)
+    form.append('SnTrackId', SnTrackId)
+    form.append('Content', Content)
+    const res = await axios.post(userNotesEndpoint, form, {
+      headers: { 'Content-Type': `multipart/form-data; boundary=${form._boundary}` }
+    })
+    return res.status
+  }
+  return getData();
+}
+export const DeleteUserNote = (noteId) => {
+  async function getData() {
+    const deleteNoteEndpoint = API_ENDPOINT + `/delUserNote/${noteId}`
+    const res = await axios.delete(deleteNoteEndpoint, {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      }
+    })
+    return res.status
+  }
+  return getData();
+}
+  
 

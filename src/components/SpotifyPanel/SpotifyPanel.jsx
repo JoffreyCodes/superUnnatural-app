@@ -5,11 +5,11 @@ import SpotifyPlaylistPlayer from './SpotifyPlaylistPlayer'
 
 function SpotifyPanel(props) {
 
-  const track = document.getElementsByClassName("row track container pl-0 tr-0")
+  const track = document.getElementsByClassName("row-track-container pl-0 tr-0")
   const trackId = props.trackClickId ? props.trackClickId :
     track[0] ?  track[0].id : null 
   
-  const playlist = document.getElementsByClassName("row playlist banner pl-0")
+  const playlist = document.getElementsByClassName("row-playlist-banner pl-0")
   const playlistId = props.selectedWorkout ? props.selectedWorkout.spotifyPlaylistId :
     playlist[0] ? playlist[0].id : null 
   // alpha val used to lighten to retrieved color

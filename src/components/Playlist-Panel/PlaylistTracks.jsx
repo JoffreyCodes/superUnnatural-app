@@ -47,6 +47,7 @@ function PlaylistTracks(props) {
     for (let i = 0; i < trackItems.length; i++){
       trackItems[i]['user_saved'] = userSavedData[i]
       trackItems[i]['snSongId'] = snSongIdList[i]
+      trackItems[i]['workoutId'] = props.workout.workoutId
       trackItems[i]['hasNote'] = userSavedNotesList.includes(trackItems[i]['snSongId']) ? true : false
     }
     setTrackListMod(trackItems)
@@ -76,13 +77,14 @@ function PlaylistTracks(props) {
         trackListData={trackListData} />
       {trackListModLoaded ? trackListMod.map((trackObj, key) => {
         return (
-            <div key={key} className={`row track container pl-${props.plId} tr-${key}`} id={trackObj.track.id} >
+          <div key={key} className={`row-track-container pl-${props.plId} tr-${key}`} id={trackObj.track.id} >
             <Track
+              key={key}
               trackObj={trackObj}
               setTrackClick={props.setTrackClick}
               id={trackObj.track.id}
-            />
-            </div>
+            />  
+          </div>
         )
       }): "loading..."}
     </>

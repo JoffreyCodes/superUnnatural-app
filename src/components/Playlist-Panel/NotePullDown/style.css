@@ -1,0 +1,66 @@
+.notes-container{
+    margin: 2% 0 0 0;
+}
+.note-pulldown-flexbox{
+    display: flex;
+    height: 20vh;
+    flex-direction: column;
+}
+.user-notes-container{
+    flex:5;
+    border: 1px solid black;
+    overflow-y: auto;
+}
+.user-notes-display{
+    height: 95%;
+}
+.user-note-flexbox{
+    display:flex;
+    flex-direction: column;
+}
+.create-note-container{
+    flex:1.5;
+}
+.create-note-flexbox{
+    display: flex;
+    height: 80%;
+    align-items: center;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 15px;
+    margin: 1% 0;
+}
+.text-area-container{
+    flex: 5;
+    height:100%;
+    margin-left: 4%;
+    display: flex;
+    align-items: center;
+}
+form.new-note-form{
+    width:100%;
+}
+input.new-note-textbox{
+    width:95%;
+    height:1.5em;
+    margin:0;
+    border: none;
+    padding: 0;
+    background-color: white;
+    font-family: inherit;
+    font-size: medium;
+}
+input.new-note-textbox:focus {
+    outline:none;
+}
+svg.submit-btn{
+    cursor: pointer;
+}
+.submit-btn-container{
+    flex: 1;
+    font-size: 1.75em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 2%;
+}
