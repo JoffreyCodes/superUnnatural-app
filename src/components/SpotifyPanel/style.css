@@ -85,3 +85,26 @@ input:checked + .toggle-slider:before {
 strong.toggle-label{
   font-size: 0.9em;
 }
+@media(max-width:425px){
+  .spotify-panel-layout-container{
+    margin: 1% 0 ;
+  }
+}
+@media(max-width:425px){
+  #sp-playlist{
+    display:none;
+  }
+}
+@media(max-width:425px){
+  #spotifyPlayerId{
+    height:80px;
+    border: none;
+    box-shadow: none;
+    width: 98%;
+  }
+}
+@media(max-width:425px){
+  .control-btns-container{
+    display:none;
+  }
+}

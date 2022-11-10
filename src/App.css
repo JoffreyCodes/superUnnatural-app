@@ -393,22 +393,3 @@ svg.boxing-icon{
     box-shadow: none;
   }
 }
-@media(max-width:425px){
-  .spotify.container{
-    margin: 1% 0 ;
-  }
-}
-@media(max-width:425px){
-  #sp-playlist{
-    display:none;
-  }
-}
-@media(max-width:425px){
-  #spotifyPlayerId{
-    height:80px;
-    border: none;
-    box-shadow: none;
-    width: 98%;
-  }
-}
-
