@@ -2,16 +2,86 @@
 .spotify.inner.panel{
     padding-top: 15px;
   }
-  .spotify.container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;  
-    flex-direction: column;
-    margin: 35px 0 35px;
-    height: -webkit-fill-available;
-  }
-  iframe{
-    border-right: 1px solid black;
-    border-top: 1px solid black;
-    box-shadow: -12px 13px 0px 0px black;
-  }  
+.spotify-panel-layout-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+  flex-direction: column;
+  margin: 35px 0 35px;
+  height: -webkit-fill-available;
+}
+.control-btns-container{
+  display:flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-top: 3%;
+}
+iframe{
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  box-shadow: -12px 13px 0px 0px black;
+}
+
+/* Toggle */
+/* The switch - the box around the slider */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 3em;
+  height: 1.5em;
+}
+.toggle-track {
+  position: relative;
+  display: inline-block;
+  width: 3em;
+  height: 1.5em;
+  background-color: grey;
+  border-radius: 15px;
+}
+/* Hide default HTML checkbox */
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.toggle-slider{
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 15px;
+  -webkit-transition: .4s;
+  transition: .4s; 
+}
+
+/* Rounded sliders */
+.toggle-slider {
+  border-radius: 34px;
+}
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  width: 1.5em;
+  height: 1.5em;
+  background-color: white;
+  border-radius: 15px;
+  -webkit-transition: .4s;
+  transition: .4s;
+} 
+
+input:checked + .toggle-slider {
+  background-color: greenyellow;
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(-1.5em);
+} 
+
+strong.toggle-label{
+  font-size: 0.9em;
+}
