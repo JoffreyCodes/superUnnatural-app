@@ -1,4 +1,4 @@
-import React, { useState, useEffect }from 'react'
+import React from 'react'
 import {FaRegStickyNote, FaStickyNote} from  'react-icons/fa'
 
 function Note(props) {
@@ -11,9 +11,9 @@ function Note(props) {
     <>
       <div className="note-btn-container" onClick={handleNotelick}>
         { props.hasNote ?
-            <FaStickyNote className="note filled" size='3em' />
+          <FaStickyNote className="note filled" size='3em' />
         :
-            <FaRegStickyNote className="note unfilled" size='3em' />
+          <FaRegStickyNote className="note unfilled" size='3em' />
         }
       </div>
     </>

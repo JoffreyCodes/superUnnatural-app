@@ -259,24 +259,6 @@ img.album-image{
   border: 1px solid white;
 }
 
-/* Spotify Columm */
-.spotify.inner.panel{
-  padding-top: 15px;
-}
-.spotify.container{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;  
-  flex-direction: column;
-  margin: 35px 0 35px;
-  height: -webkit-fill-available;
-}
-iframe{
-  border-right: 1px solid black;
-  border-top: 1px solid black;
-  box-shadow: -12px 13px 0px 0px black;
-}
-
 /* Workout Column */
 .col.layout.details {
   background-color: papayawhip;

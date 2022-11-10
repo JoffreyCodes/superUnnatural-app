@@ -18,8 +18,6 @@ function PlaylistTracks(props) {
       const data = await FetchPlaylistData(spotifyPlaylistId)
       setTrackListData(data)
       setTrackListDataLoaded(true)   
-      props.setTrackListDataLoaded(true)    
-
     } catch (error) {
       console.log(error)
       window.location.replace(PUBLIC_URL)
@@ -31,7 +29,8 @@ function PlaylistTracks(props) {
       const trackIdList = trackListData.tracks.items.map(trackObj => trackObj.track.id)
       const userSavedData = await UserSavedTrack(trackIdList)
       setUserSavedData(userSavedData)
-      setUserSavedDataLoaded(true)    
+      setUserSavedDataLoaded(true)   
+      props.setTrackListDataLoaded(true)
     } catch (error) {
       console.log(error)
       window.location.replace(PUBLIC_URL)
@@ -68,6 +67,17 @@ function PlaylistTracks(props) {
     if (userSavedDataLoaded) { modifyTrackList()}
   }, [userSavedDataLoaded])
   
+  useEffect(() => {
+    const track = document.getElementsByClassName("row-track-container pl-0 tr-0")
+    const playlist = document.getElementsByClassName("row playlist banner pl-0")
+    if (track[0]) {
+      props.setFirstTrack(track[0].id)
+    }
+    if (playlist[0]) {
+      props.setFirstPlaylist(playlist[0].id)
+    }
+  })
+
   return (
     <>
       <PlaylistBanner
@@ -83,6 +93,7 @@ function PlaylistTracks(props) {
               trackObj={trackObj}
               setTrackClick={props.setTrackClick}
               id={trackObj.track.id}
+              setFirstTrack={props.setFirstTrack}
             />  
           </div>
         )

@@ -35,6 +35,8 @@ function Playlists(props) {
                 spotifyPlaylistId={workout.spotifyPlaylistId}
                 setTrackClick={props.setTrackClick}
                 setTrackListDataLoaded={props.setTrackListDataLoaded}
+                setFirstTrack={props.setFirstTrack}
+                setFirstPlaylist={props.setFirstPlaylist}
               />
             </div>)
         }) : "loading..."}

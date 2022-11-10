@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import Heartbox from './Heartbox'
 import Note from './Note'
 import NotePullDownLayout from './NotePullDown/NotePullDownLayout';
@@ -17,7 +17,7 @@ function Track(props) {
   const handleNoteClick = () =>{
     setShowNotePulldown(!showNotePulldown)
   }
-  
+
   return (
     <div className="track-container"> 
     <div className="track-flexbox">
