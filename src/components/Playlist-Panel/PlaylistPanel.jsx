@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { GetUserNotes } from '../../utils/FetchAPI'
 
 import PlaylistTracks from './PlaylistTracks'
-
+import './style.css'
 function Playlists(props) {
   const [userSavedNotes, setUserSavedNotes] = useState({})
   const [userSavedNotesLoaded, setUserSavedNotesLoaded] = useState(false)

@@ -1,8 +1,9 @@
-import React, {useState,useEffect} from 'react'
-import Heartbox from './Heartbox'
-import Note from './Note'
-import NotePullDownLayout from './NotePullDown/NotePullDownLayout';
-import PreviewPlayer from './PreviewPlayer'
+import React, {useState} from 'react'
+import Heartbox from '../Heartbox'
+import Note from '../Note'
+import NotePullDownLayout from '../NotePullDown/NotePullDownLayout';
+import PreviewPlayer from '../PreviewPlayer'
+import './style.css'
 
 function Track(props) {
   const [showNotePulldown, setShowNotePulldown] = useState(false);

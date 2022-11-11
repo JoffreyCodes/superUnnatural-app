@@ -1,5 +1,6 @@
 import React from 'react'
 import { PUBLIC_URL } from '../../auth/auth'
+import './style.css'
 
 function Navbar() {
   const handleLogout = () => {

@@ -1,0 +1,23 @@
+.navbar{
+    position: fixed;
+    width: 100%;
+    background-color: #8f8f8f;
+    height: 25px;
+    z-index: 1;
+  }
+  
+  .navbar-container{
+    padding: 0 2vw;
+    text-align: right;
+    color: greenyellow;
+    display:flex;
+    justify-content: space-between;
+  }
+  .navbar-spHandle{
+  
+  }
+  .logout-btn{
+    cursor: pointer;
+    /* margin: auto;
+    width: 5em; */
+  }

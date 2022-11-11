@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { FetchPlaylistData, UserSavedTrack } from '../../utils/FetchSpotifyAPI'
 import PlaylistBanner from './PlaylistBanner'
-import Track from './Track'
+import Track from './Track/Track'
 import { PUBLIC_URL } from '../../auth/auth'
 
 function PlaylistTracks(props) {

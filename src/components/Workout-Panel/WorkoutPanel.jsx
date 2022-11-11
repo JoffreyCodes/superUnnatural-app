@@ -1,5 +1,6 @@
 import React from 'react'
 import WorkoutDetails from './WorkoutDetails'
+import './style.css'
 
 function WorkoutPanel(props) {
   const data = props.selectedWorkout ? props.selectedWorkout :

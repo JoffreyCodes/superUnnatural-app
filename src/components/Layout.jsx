@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Navbar from './Navbar/Navbar'
-import Playlists from './Playlist-Panel/Playlists'
+import Playlists from './Playlist-Panel/PlaylistPanel'
 import SpotifyPanel from './SpotifyPanel/SpotifyPanel'
 import WorkoutPanel from './Workout-Panel/WorkoutPanel'
 

@@ -1,0 +1,43 @@
+.row.playlist.banner{
+    height: 70px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: 5px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: greenyellow;
+    border-bottom: 1px solid lightgrey;
+  }
+  .playlist.container{
+    margin: 35px 15px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    border: 1px solid black;
+    box-shadow: -7px 7px 0px 0px black;
+  }
+  /* Playlist Banner Styling */
+  .banner.info.container{
+    flex-direction: column;
+    padding: 5px;
+  }
+  .banner.row{
+    display:flex;
+  }
+  .banner.row.info{
+    font-size: 0.8em;
+    justify-content: end
+  }
+  img.banner{
+    height: 100%;
+    width: 20%;
+    border-radius: 15px;
+    border: 1px solid black;
+  }
+  .row-track-container{
+    display:flex;
+    flex-direction: column;
+    background-color: #858585;
+    border-bottom: 1px solid lightgrey;
+    padding: 5px;
+  }

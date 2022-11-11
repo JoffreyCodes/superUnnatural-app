@@ -1,0 +1,59 @@
+/* Workout Column */
+.col.layout.details {
+    background-color: papayawhip;
+    flex: 1;
+}
+.workout-panel{
+  margin:35px 15px;
+  height: -webkit-fill-available;
+  border: 1px solid black;
+  box-shadow: -12px 13px 0px 0px black;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: lightgoldenrodyellow;
+}
+img.workout-album{
+  width: 70%;
+  border-radius: 25px;
+  border: 1px solid black;
+}
+.workout-details-container{
+  display:flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+.workout-detail{
+  flex: 1;
+  width: 20px;
+}
+.text.detail{
+  font-family: fantasy;
+}
+.text.detail.workout.title{
+  font-size: 35px;
+  padding: 25px 0;
+}
+.text.detail.title{
+  font-size: 15px;
+  padding-bottom: 5px;
+}
+.text.detail.duration{
+  font-size: 25px;
+  color: yellowgreen;
+}
+.intensity.rating{
+  font-size: 25px;
+}
+.intensity.low{
+  color:green;
+}
+.intensity.med{
+  color:blue;
+}
+.intensity.high{
+  color:Red;
+}
+svg.boxing-icon{
+  color:red;
+  transform: rotate(-90deg)
+}

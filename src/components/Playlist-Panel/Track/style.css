@@ -1,0 +1,90 @@
+/* Track styling */
+.track-container{
+
+}
+.row-track-container:last-child{
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.track-flexbox{
+  display: flex;
+  flex-direction: row;
+}
+.album-image-container{
+  flex: 1.5;
+  align-self: center;
+}
+.track-display-container{
+  flex:5 1;
+  margin-left: 1%;
+}
+.track-display{
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.track-display-info{
+  width:60%
+}
+.track-display-btns{
+  width: 40%;
+  display: flex;
+  padding-bottom: 1%;
+  justify-content: flex-end;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.track-preview-player{
+  height: 30%;
+}
+p.track-info-title{
+  font-size: 1em;
+  color: white;
+  margin-block-end: 0px;
+}
+p.track-info-artist{
+  font-size: 1em;
+  color: lightgrey;
+  margin-block-start: 0px;
+}
+.album.image{
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+.note-btn-container{
+  padding: 5% 2%;
+}
+svg.note{
+  cursor: pointer;
+  user-select: none; /* For Chrome and Opera */
+  -ms-user-select: none; /* For Internet Edge and Explorer*/
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none; /* For Firefox */
+}
+svg.note.filled{
+  color: greenyellow;
+}
+.heart-container{
+  padding: 5% 2%;
+}
+svg.heart{
+  cursor: pointer;
+  user-select: none; /* For Chrome and Opera */
+  -ms-user-select: none; /* For Internet Edge and Explorer*/
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none; /* For Firefox */
+}
+audio{
+  width: 100%;
+  height: -webkit-fill-available;
+  border-radius: 90px;
+}
+img.album-image{
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid white;
+}
