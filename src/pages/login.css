@@ -25,24 +25,19 @@
   padding:0 5%;
   text-align: center;
 }
-@media (max-width: 425px){
+button.login-panel-btn{
+  background-color: greenyellow;
+  height: 10%; 
+  width: 27%;
+  margin: 0.5em;
+}
+@media (max-width: 1024px){
   .login-panel{
-    background-color: whitesmoke;
-    align-self: center;
-    height: 80vh;
-    width: 75vw;
-    border: 1px solid black;
-    border-radius: 15px;
-    box-shadow: -12px 13px 0px 0px black;
-    display: flex;
-    justify-content: center;
+    width: 33vw;
   }
 }
-@media (max-width: 425px){
-  .login-container{
-    background-color: lightgoldenrodyellow;
-    display: flex;
-    justify-content: center;
-    height: 100vh;
+@media (max-width: 796px){
+  .login-panel{
+    width: 65vw;
   }
 }

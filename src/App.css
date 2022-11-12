@@ -6,13 +6,6 @@
 .App {
   text-align: left;
 }
-button.login-panel-btn{
-  background-color: greenyellow;
-
-  height: 10%; 
-  width: 27%;
-  margin: 0.5em;
-}
 input{
   border-radius: 7px;
   width: 200px;
