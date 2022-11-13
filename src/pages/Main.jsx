@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import { FetchSpotifyData, GetCurrUserSpProfile } from '../utils/FetchSpotifyAPI'
 import { FetchSnDataWithId } from '../utils/FetchAPI'
+import { PUBLIC_URL } from '../auth/auth'
 
 import Layout from '../components/Layout'
 function Main(props) {
@@ -25,10 +26,16 @@ function Main(props) {
   useEffect(() => {
     const getSnDataFromId = async () => {
       const session_id = props.user
-      const snData = await FetchSnDataWithId(session_id)
-      setSnDataLoaded(false)
-      setSnData(snData.data)
-      setSnDataLoaded(true)
+      try {
+        const snData = await FetchSnDataWithId(session_id)
+        setSnData(snData.data)
+        setSnDataLoaded(true)  
+      } catch (e) {
+        console.log(e)
+        sessionStorage.setItem('InvalidUser', session_id)
+        sessionStorage.removeItem('session_id')
+        window.location.replace(PUBLIC_URL)
+      }        
     }
     getSnDataFromId()
     getSpData()

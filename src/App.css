@@ -6,11 +6,7 @@
 .App {
   text-align: left;
 }
-input{
-  border-radius: 7px;
-  width: 200px;
-  margin: 5px;
-}
+
 button{
   color: black;
   background-color: #adff2f50;
@@ -25,11 +21,6 @@ button{
 }
 button:hover {
   cursor: pointer;
-}
-hr {
-  /* flex-grow: 1; */
-  margin:10% 0;
-  width: 80%; /* or this */
 }
 .row {
   display: flex;

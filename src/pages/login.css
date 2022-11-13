@@ -16,7 +16,7 @@
   justify-content: center;
 }
 .login-content{
-  height: 80%;
+  height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,11 +25,29 @@
   padding:0 5%;
   text-align: center;
 }
+.saveSessionId-flex{
+  display: flex;
+  justify-content: flex-end;
+}
+.login-content hr{
+  margin:5% 0;
+  width: 80%;
+}
+.login-content small{
+  color:red;
+}
+label.saveSessionId-label{
+  font-size: 12px;
+}
+input.sessionId-input{
+  border-radius: 7px;
+  width: 200px;
+  margin: 5px;
+}
 button.login-panel-btn{
   background-color: greenyellow;
-  height: 10%; 
   width: 27%;
-  margin: 0.5em;
+  margin-top: 2%;
 }
 @media (max-width: 1024px){
   .login-panel{

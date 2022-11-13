@@ -6,21 +6,46 @@ import './login.css'
 
 const Login = (props) => {
   const [formEmpty, setFormEmpty] = useState()
+  const [sessionId, setSessionId] = useState(localStorage.getItem('saved_session_id'))
+  const [saveSessionId, setSaveSessionId] = useState(localStorage.getItem('saved_session_id') ? true : false)
+  
   const handleLogin = () => {
-    const userInput = document.forms[0].elements[0].value
-    if (userInput) {
+    if (sessionId) {
+      saveSessionId
+        ? localStorage.setItem('saved_session_id', sessionId)
+        : localStorage.removeItem('saved_session_id')
       setFormEmpty(false)
-      // window.location = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&redirect_uri=${REDIRECT_URL_AFTER_LOGIN}&scope=${SCOPES_URL_PARAM}&response_type=token&show_dialog=true`;
-      sessionStorage.setItem('session_id', userInput)
+      sessionStorage.setItem('session_id', sessionId)
+      sessionStorage.removeItem('InvalidUser')
+      window.location = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&redirect_uri=${REDIRECT_URL_AFTER_LOGIN}&scope=${SCOPES_URL_PARAM}&response_type=token&show_dialog=true`;
     } else {
       setFormEmpty(true)
     }
   }
+
+  const handleCheckBoxChange = (e) => {
+    if (e.target.checked) {
+      setSaveSessionId(true)
+    } else {
+      setSaveSessionId(false)
+      localStorage.removeItem('saved_session_id')
+    }
+  }
+
   const handlePreview = () => {
     window.location = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&redirect_uri=${REDIRECT_URL_AFTER_LOGIN}&scope=${SCOPES_URL_PARAM}&response_type=token&show_dialog=true`;
     sessionStorage.setItem('session_id', PREVIEW_ID)
   }
 
+  const ErrorMessage = () => {
+    const formEmptyMsg = 'Please enter your SN SessionId'
+    const invalidIdMsg = 'Invalid SN SessionId '
+    if (formEmpty) {
+      return (<small> {formEmptyMsg} </small>)
+    } else if (sessionStorage.getItem('InvalidUser')) {
+      return (<small> {invalidIdMsg} </small>)
+    } else return null
+  }
 
   return (
     <div className="login-container">
@@ -33,14 +58,29 @@ const Login = (props) => {
             <label htmlFor="sessionId">
               <strong>Supernatural SessionId:</strong>
             </label><br />
-            <input type="text" id="sessionId" name="sessionId" /><br/> 
+            <input type="text"
+              className="sessionId-input"
+              value={sessionId}
+              onChange={e => setSessionId(e.target.value)}
+            /><br />
+            {<ErrorMessage />}
+            <div className="saveSessionId-flex">
+              <label className="saveSessionId-label"> Save SessionId
+                <input type="checkbox"
+                  onChange={handleCheckBoxChange}
+                  checked={saveSessionId}
+                />
+              </label>
+            </div>
           </form>
-          {formEmpty ? <small> Please enter your SN SessionId </small>
-            : null}
-          <button className="login-panel-btn login" onClick={() => handleLogin()}>Login</button>
-          <hr className="horizontal"/>
+          <button className="login-panel-btn login" onClick={handleLogin}>
+            Login
+          </button>
+          <hr/>
           <h3>Or preview with your Spotify account below!</h3>
-          <button className="login-panel-btn preview"onClick={() => handlePreview()}>Preview</button>  
+          <button className="login-panel-btn preview" onClick={handlePreview}>
+            Preview
+          </button>  
         </div>        
       </div>
     </div>      
