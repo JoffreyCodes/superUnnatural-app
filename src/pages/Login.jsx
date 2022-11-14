@@ -77,7 +77,7 @@ const Login = (props) => {
             Login
           </button>
           <br />
-          <a href="https://github.com/JoffreyCodes/superUnnatural-app">
+          <a href="https://github.com/JoffreyCodes/superUnnatural-app#get-sessionid">
             How do I get my SN SessionId?
           </a>
           <hr/>
