@@ -48,6 +48,7 @@ function Track(props) {
       {showNotePulldown ?
         <div className="notes-container">
           <NotePullDownLayout
+            showNotePulldown = {showNotePulldown}
             setHasNote={setHasNote}
             trackObj={trackObj}
           />

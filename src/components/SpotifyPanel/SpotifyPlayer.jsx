@@ -1,7 +1,9 @@
 import React from 'react'
 
 function SpotifyPlayer(props) {
-
+    if (props.trackClick === undefined) {
+        return
+    }
     return (    
         <>
             <iframe

@@ -5,15 +5,20 @@
 ## Table of contents
 
 - [General info](#general-info)
-- [Usage](#usage)
+- [Get sessionId](#get-sessionid)
 - [Features](#features)
 - [Status](#status)
+- [Project Challenges](#project-challenges)
 - [Credits](#credits)
 
 ## App Snapshot
 
+  <img src="./media/crud-operations.gif" width=100%>
+<details>
+  <summary> Version 1</summary>
   <img src="./media/login-to-main.gif" width=100%>
   <img src="./media/heart-to-spotify.gif" width=100%>
+</details>
 <details>
   <summary>Proof of Concept</summary>
   <img src="./media/proof-of-concept.png" height=50%>
@@ -28,6 +33,19 @@
 Supernatural is a VR game that promotes exercise through music. Each workout is a playlist of today's modern and yesterday's classical songs that are not only an enjoyable experience to "flow" or "box" to, but also serve to expose users to new or once-familiar music. The Supernatural app provides a feed of the user's workout history, along with access to the Spotify Playlist. However, navigating the Supernatural app for each song that you enjoy is a lenghty process, especially when having to navigate back and forth between Spotify and Supernatural to preview each song. I decided to build this app to expidite this process so that I can preview the songs to help me recall which songs I enjoyed, and save them onto a Spotify playlist for enjoying at a later time, likely during car rides.
 
 SuperUnnatural is a single-page application that allows users to save, play, and preview workout songs that were recently played on Supernatural onto their Spotify "Liked" playlist.
+
+## Get SessionId
+
+<img src="./media/get-session-id.gif" height=50%>
+<br/ >
+
+In order to link your Supernatural history to this spotify companion app, you must input your session id. Follow the steps below to find your session id.
+
+- Make sure you are logged into your account at [www.getsupernatural.com/](https://www.getsupernatural.com/).
+- Right click anywhere on the page and select your web browsers inspector.
+- Navigate the inspector's panel to the application tab.
+- Under Cookies, find the "session_id" cookie and copy its value.
+- Paste the value into the supernatural spotify companion login page and proceed to connect your spotify account.
 
 ## Tech
 

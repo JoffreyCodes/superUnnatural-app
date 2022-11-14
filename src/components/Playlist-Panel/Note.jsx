@@ -3,13 +3,13 @@ import {FaRegStickyNote, FaStickyNote} from  'react-icons/fa'
 
 function Note(props) {
   
-  const handleNotelick = () => {
+  const handleNoteClick = () => {
     props.noteClick()
   }
 
   return (
     <>
-      <div className="note-btn-container" onClick={handleNotelick}>
+      <div className="note-btn-container" onClick={handleNoteClick}>
         { props.hasNote ?
           <FaStickyNote className="note filled" size='3em' />
         :

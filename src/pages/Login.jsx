@@ -1,5 +1,5 @@
 import React, { useState }  from 'react';
-import { CLIENT_ID, CLIENT_SECRET, SPOTIFY_AUTHORIZE_ENDPOINT, REDIRECT_URL_AFTER_LOGIN, SCOPES_URL_PARAM, PREVIEW_SN_ID, PUBLIC_URL } from '../auth/auth'
+import { CLIENT_ID, CLIENT_SECRET, SPOTIFY_AUTHORIZE_ENDPOINT, REDIRECT_URL_AFTER_LOGIN, SCOPES_URL_PARAM, PREVIEW_SN_ID } from '../auth/auth'
 import { ImSpotify } from 'react-icons/im'
 
 import './login.css'
@@ -76,7 +76,10 @@ const Login = (props) => {
           <button className="login-panel-btn login" onClick={handleLogin}>
             Login
           </button>
-          How do I get my SN SessionId?
+          <br />
+          <a href="https://github.com/JoffreyCodes/superUnnatural-app">
+            How do I get my SN SessionId?
+          </a>
           <hr/>
           <h3>Or preview with your Spotify account below!</h3>
           <button className="login-panel-btn preview" onClick={handlePreview}>

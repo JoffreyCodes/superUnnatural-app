@@ -4,7 +4,6 @@ import NoteDisplay from './NoteDisplay'
 
 function UserNoteDisplay(props) {
   const [userNotesHx, setUserNotesHx] = useState([])
-  const [dataLoaded, setDataLoaded] = useState(false)
 
   const spotify_id = sessionStorage.getItem('spotify_id')
 
@@ -13,7 +12,6 @@ function UserNoteDisplay(props) {
       const fetch_userNotesHx = await GetUserNote(spotify_id, snSongId)
       fetch_userNotesHx.length === 0  ? props.setHasNote(false) : props.setHasNote(true)
       setUserNotesHx(fetch_userNotesHx)
-      setDataLoaded(true)
       props.setReloadNotes(false)
     } catch (error) {
       console.log(error)
@@ -21,10 +19,10 @@ function UserNoteDisplay(props) {
   }
 
   useEffect(() => {
-    if ((props.trackObj.hasNote && !dataLoaded) || props.reloadNotes ) {
+    if ( props.reloadNotes ) {
       getUserNote(spotify_id, props.trackObj.snSongId)
     }
-  }, [dataLoaded, props.trackObj.hasNote, userNotesHx, props.reloadNotes])
+  }, [props.trackObj.hasNote, userNotesHx, props.reloadNotes])
   
 
   return (
