@@ -3,7 +3,7 @@ import { GetUserNotes } from '../../utils/FetchAPI'
 
 import PlaylistTracks from './PlaylistTracks'
 import './style.css'
-function Playlists(props) {
+function PlaylistPanel(props) {
   const [userSavedNotes, setUserSavedNotes] = useState({})
   const [userSavedNotesLoaded, setUserSavedNotesLoaded] = useState(false)
   
@@ -44,4 +44,4 @@ function Playlists(props) {
     )
   }
 
-export default Playlists
+export default PlaylistPanel

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Navbar from './Navbar/Navbar'
-import Playlists from './Playlist-Panel/PlaylistPanel'
+import PlaylistPanel from './Playlist-Panel/PlaylistPanel'
 import SpotifyPanel from './SpotifyPanel/SpotifyPanel'
 import WorkoutPanel from './Workout-Panel/WorkoutPanel'
 
@@ -35,7 +35,7 @@ function Layout(props) {
             />
           </div>
           <div className="col layout playlist">
-            <Playlists snData={props.snData}
+            <PlaylistPanel snData={props.snData}
               snDataLoaded={props.snDataLoaded}
               setTrackClick={setTrackClick}
               setSelectedWorkout={setSelectedWorkout}
