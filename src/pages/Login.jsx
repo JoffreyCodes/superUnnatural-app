@@ -87,14 +87,17 @@ const Login = (props) => {
           </a>
           <br />
           <small>
-            This app is in Development Mode and you must be an approved user to use your SN. Please feel free to contact me for approval at [
+            This app is in&nbsp;
+            <a href="https://spotify.dev/documentation/web-api/guides/development-extended-quota-modes/">
+              Development Mode
+            </a>
+            &nbsp;and you may need to be an approved user to use this app with your SN SessionId. Please feel free to contact me with your name and spotify account email address for approval at [
             <a href="mailto:inocejoff@gmail.com">
             inocejoff@gmail.com
             </a>
             ]
           </small>
           <hr/>
-          <h3>Or preview with your Spotify account below!</h3>
           <button className="login-panel-btn preview" onClick={handlePreview}>
             Preview
           </button>
