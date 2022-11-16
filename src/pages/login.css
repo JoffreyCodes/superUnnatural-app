@@ -16,7 +16,7 @@
   justify-content: center;
 }
 .login-content{
-  height: 90%;
+  height: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,6 +35,10 @@
 }
 .login-content small{
   color:red;
+}
+.github-link{
+  align-self: self-end;
+  margin-top: 4%;
 }
 label.saveSessionId-label{
   font-size: 12px;

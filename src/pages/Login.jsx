@@ -1,6 +1,7 @@
 import React, { useState }  from 'react';
 import { CLIENT_ID, CLIENT_SECRET, SPOTIFY_AUTHORIZE_ENDPOINT, REDIRECT_URL_AFTER_LOGIN, SCOPES_URL_PARAM, PREVIEW_SN_ID, PUBLIC_URL } from '../auth/auth'
 import { ImSpotify } from 'react-icons/im'
+import {AiOutlineGithub} from 'react-icons/ai'
 
 import './login.css'
 import { PreviewMode } from '../utils/PreviewData';
@@ -84,11 +85,24 @@ const Login = (props) => {
           <a href="https://github.com/JoffreyCodes/superUnnatural-app#get-sessionid">
             How do I get my SN SessionId?
           </a>
+          <br />
+          <small>
+            This app is in Development Mode and you must be an approved user to use your SN. Please feel free to contact me for approval at [
+            <a href="mailto:inocejoff@gmail.com">
+            inocejoff@gmail.com
+            </a>
+            ]
+          </small>
           <hr/>
           <h3>Or preview with your Spotify account below!</h3>
           <button className="login-panel-btn preview" onClick={handlePreview}>
             Preview
-          </button>  
+          </button>
+          <div className="github-link">
+            <AiOutlineGithub size="1.5rem"/>
+            <a href="https://github.com/JoffreyCodes/superUnnatural-app"><strong>Github</strong></a>
+          </div>
+          
         </div>        
       </div>
     </div>      
