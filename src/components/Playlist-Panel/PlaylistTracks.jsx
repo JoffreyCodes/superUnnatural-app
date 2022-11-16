@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { FetchPlaylistData, UserSavedTrack } from '../../utils/FetchSpotifyAPI'
 import PlaylistBanner from './PlaylistBanner'
 import Track from './Track/Track'
-import { PUBLIC_URL } from '../../auth/auth'
+import { PREVIEW_MODE, PUBLIC_URL } from '../../auth/auth'
 
 function PlaylistTracks(props) {
   const spotifyPlaylistId = props.spotifyPlaylistId
@@ -26,7 +26,8 @@ function PlaylistTracks(props) {
 
   const getUserSavedData = async () => {
     try {
-      const trackIdList = trackListData.tracks.items.map(trackObj => trackObj.track.id)
+      const trackIdList = PREVIEW_MODE ? null
+        : trackListData.tracks.items.map(trackObj => trackObj.track.id)
       const userSavedData = await UserSavedTrack(trackIdList)
       setUserSavedData(userSavedData)
       setUserSavedDataLoaded(true)   

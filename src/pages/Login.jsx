@@ -1,8 +1,9 @@
 import React, { useState }  from 'react';
-import { CLIENT_ID, CLIENT_SECRET, SPOTIFY_AUTHORIZE_ENDPOINT, REDIRECT_URL_AFTER_LOGIN, SCOPES_URL_PARAM, PREVIEW_SN_ID } from '../auth/auth'
+import { CLIENT_ID, CLIENT_SECRET, SPOTIFY_AUTHORIZE_ENDPOINT, REDIRECT_URL_AFTER_LOGIN, SCOPES_URL_PARAM, PREVIEW_SN_ID, PUBLIC_URL } from '../auth/auth'
 import { ImSpotify } from 'react-icons/im'
 
 import './login.css'
+import { PreviewMode } from '../utils/PreviewData';
 
 const Login = (props) => {
   const [formEmpty, setFormEmpty] = useState()
@@ -17,6 +18,7 @@ const Login = (props) => {
       setFormEmpty(false)
       sessionStorage.setItem('session_id', sessionId)
       sessionStorage.removeItem('InvalidUser')
+      sessionStorage.setItem('preview_mode', false)
       window.location = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&redirect_uri=${REDIRECT_URL_AFTER_LOGIN}&scope=${SCOPES_URL_PARAM}&response_type=token&show_dialog=true`;
     } else {
       setFormEmpty(true)
@@ -33,8 +35,10 @@ const Login = (props) => {
   }
 
   const handlePreview = () => {
-    window.location = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&redirect_uri=${REDIRECT_URL_AFTER_LOGIN}&scope=${SCOPES_URL_PARAM}&response_type=token&show_dialog=true`;
-    sessionStorage.setItem('session_id', PREVIEW_SN_ID)
+    // window.location = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&redirect_uri=${REDIRECT_URL_AFTER_LOGIN}&scope=${SCOPES_URL_PARAM}&response_type=token&show_dialog=true`;
+    PreviewMode()
+    window.location.replace(PUBLIC_URL)
+
   }
 
   const ErrorMessage = () => {

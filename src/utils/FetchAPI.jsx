@@ -1,10 +1,13 @@
 import axios from 'axios';
+import { PREVIEW_MODE } from '../auth/auth';
+import { PREVIEW_SN_DATA } from './PreviewData';
 const FormData = require('form-data');
 
 const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
 
 export const FetchSnDataWithId = (sessionId) => {
+  if(PREVIEW_MODE) return PREVIEW_SN_DATA
   async function getData() {
     const sessionIdEndpoint = `/sessionId/${sessionId}`
     const response = await axios.get(API_ENDPOINT + sessionIdEndpoint, {
