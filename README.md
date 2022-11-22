@@ -8,6 +8,7 @@
 - [Get sessionId](#get-sessionid)
 - [Features](#features)
 - [Status](#status)
+- [Current Works](current-works)
 - [Project Challenges](#project-challenges)
 - [Credits](#credits)
 
@@ -66,6 +67,10 @@ In order to link your Supernatural history to this spotify companion app, you mu
 - Python
 - Flask
 
+### Database
+
+- MySQL
+
 ### DevOps
 
 - AWS EC2
@@ -75,8 +80,6 @@ In order to link your Supernatural history to this spotify companion app, you mu
 - SSL Certbot
 
 ## Features
-
-**List of features:**
 
 Bells & Whistles:
 
@@ -89,7 +92,18 @@ Proof of Concept:
 - Users are able to select and unselect tracks to save to their playlist
 - Current saved tracks persist across separate user sessions
 
-**Future Works:**
+## Project Milestones
+
+- Proof of concept, design, and hosting - Completed
+  - Initial Web Hosting - Back end on AWS EC2; Front-end on github pages
+  - MySQL integration
+
+## Current works
+
+CMS for [SN Airtable](https://airtable.com/shrcuUWyR76gcdbqw/tblMuteBHqIjaYplx/viwLtKByxy8UB2JG2)
+<img src="./media/SN_CMS_UML.png" width=100%>
+
+## Future Works:
 
 - AWS Hosting
   - Full-stack app that is functional using the Docker network
@@ -99,18 +113,11 @@ Proof of Concept:
   - Integrated Spotify Player - Completed
   - Track Preview Selector - Completed
   - Access to artist Spotify page - TBD
-- Workout Data Analytics and Visualizations - In Progress
-  - Fitbit data integration - In Progress
-- SQL Database Integration - TBD
-  - Allow user to save comment on track using SN designated track ids
-
-## Project Status
-
-- Proof of concept - Completed
-- V1 Proof of concept and web page design
-  - V1.1 Initial Web Hosting - Completed
-  - V1.2 Back and front end hosting using AWS EC2
-- V2 - User data analytics, Workout rankings and Fitbit data - In development
+- Workout Data Analytics and Visualizations - TBD
+  - Fitbit data integration - TBD
+- SQL Database Integration - In progress
+  - Allow user to save comment on tracks - Completed
+  - CMS for [SN Airtable](https://airtable.com/shrcuUWyR76gcdbqw/tblMuteBHqIjaYplx/viwLtKByxy8UB2JG2)
 
 ## Project Challenges
 
