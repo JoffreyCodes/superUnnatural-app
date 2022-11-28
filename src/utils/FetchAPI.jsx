@@ -36,7 +36,7 @@ export const FetchSpAlbumColor =  (trackId) => {
 
 export const GetUserNotes =  (spUserId) => {
   async function getData() {
-    const userNotesEndpoint = API_ENDPOINT + '/userNotes/' + spUserId
+    const userNotesEndpoint = API_ENDPOINT + '/notes/spId/' + spUserId
     const res = await axios.get(userNotesEndpoint, {
       headers: {
         'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ export const GetUserNotes =  (spUserId) => {
 
 export const GetUserNote =  (spUserId, snSongId) => {
   async function getData() {
-    const userNotesEndpoint = API_ENDPOINT+'/userNote/'+spUserId+'/'+snSongId 
+    const userNotesEndpoint = API_ENDPOINT+'/notes/'+spUserId+'/'+snSongId 
     const res = await axios.get(userNotesEndpoint, {
       headers: {
         'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ export const GetUserNote =  (spUserId, snSongId) => {
 
 export const UpdateUserNote =  (noteId, newContent) => {
   async function getData() {
-    const userNotesEndpoint = API_ENDPOINT + '/userNote'
+    const userNotesEndpoint = API_ENDPOINT + '/notes'
     const form = new FormData();
     form.append('NoteId', noteId)
     form.append('Content', newContent)
@@ -77,7 +77,7 @@ export const UpdateUserNote =  (noteId, newContent) => {
 }
 export const PostUserNote =  (SpUserId,SnWorkoutId, SnTrackId, Content) => {
   async function getData() {
-    const userNotesEndpoint = API_ENDPOINT + '/userNote'
+    const userNotesEndpoint = API_ENDPOINT + '/notes'
     const form = new FormData();
     form.append('SpUserId', SpUserId)
     form.append('SnWorkoutId', SnWorkoutId)
@@ -92,7 +92,7 @@ export const PostUserNote =  (SpUserId,SnWorkoutId, SnTrackId, Content) => {
 }
 export const DeleteUserNote = (noteId) => {
   async function getData() {
-    const deleteNoteEndpoint = API_ENDPOINT + `/delUserNote/${noteId}`
+    const deleteNoteEndpoint = API_ENDPOINT + `/notes/${noteId}`
     const res = await axios.delete(deleteNoteEndpoint, {
       headers: {
         'Content-Type': 'application/json',
